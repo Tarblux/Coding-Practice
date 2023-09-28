@@ -16,7 +16,6 @@ console.log(interestRate)
 let age = 30 ; // Number Literal
 let name2 = 'Tariq' ; //String Literal
 let isApproved = false ; // Boolean Literal 
-
 let firstName; // If we don't initialize it by default it will be undefined 
 let lastName = null ; // This clears  the value stored in a variable 
 
