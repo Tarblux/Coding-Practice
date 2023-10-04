@@ -38,4 +38,14 @@ function square(number) {
    return number * number ;     
 }
 
+// Look into the structure of this more  
+
+function factorial(number) {
+        
+        if (number === 0) {
+                return 1;
+        }
+        return number * factorial(number - 1);
+}
+
 console.log(square(9))
