@@ -27,6 +27,13 @@ function greet(name , lastName) {
 
 greet('John' , 'Smith')
 
+function add(a,b) {
+
+    sum = a + b 
+    return sum
+
+}
+
 // Notice that this prints undefined , that's becuase we didn't pass a second argument to the function so the last name parameter in the function ended up
 // being undefined
 
