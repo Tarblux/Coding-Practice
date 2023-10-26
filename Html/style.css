@@ -1,0 +1,28 @@
+/* FILEPATH: /c:/Users/tarbl/Documents/Software Dev/!Projects(Personal)/Coding-Practice/Html/style.css */
+
+/* Set default font family and size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Center align all text */
+.text-center {
+    text-align: center;
+}
+
+/* Add a border to all images */
+img {
+    border: 1px solid black;
+}
+
+/* Add a background color to all headings */
+h1, h2, h3, h4, h5, h6 {
+    background-color: lightgray;
+}
+
+/* Add a hover effect to all links */
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
