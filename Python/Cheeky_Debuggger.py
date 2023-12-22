@@ -1,21 +1,46 @@
-nums = [0,1,2,2,3,0,4,2]
+class Solution:
+    def threeSum(nums):
+            
+        result = []
 
-next_pos = 0
+        nums.sort()
 
-val = 2 
+        for i in range (0,len(nums)) : 
 
-for i in range (0,len(nums)) : 
+            if i > 0 and nums[i] == nums[i-1] : 
+
+                continue
+
+            right = len(nums) - 1
+
+            left = i + 1
+
+            while left < right : 
+
+                cur_sum = nums[i] + nums[left] + nums[right]
+
+                if cur_sum == 0 :
+
+                    result.append([nums[i],nums[left],nums[right]])
+
+                    # left += 1
+                    # right -= 1
+                    
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+
+                if cur_sum < 0 :
+
+                    left += 1
+
+                if cur_sum > 0 :
+
+                    right -= 1
+                    
+        return result
     
-    if nums[i] != val : 
-        
-        nums[next_pos] = nums[i]
-        
-        next_pos += 1 
-        
-        
-for i in range (next_pos, len(nums)) : 
+print (Solution.threeSum([-1,0,1,2,-1,-4]))
     
-    nums[i] = '_'
-
-print(nums)        
-print(next_pos)
