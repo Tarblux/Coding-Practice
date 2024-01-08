@@ -13,7 +13,12 @@ body {
 
 /* Add a border to all images */
 img {
-    border: 1px solid black;
+    border: 1px solid rgb(0, 255, 204);
+}
+
+.img1 {
+
+    color :coral
 }
 
 /* Add a background color to all headings */
