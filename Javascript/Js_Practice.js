@@ -1,9 +1,9 @@
 //this is my first javascript code 
 console.log("Hello Squirrel");
 
-let name = 'Whipski';
+let fname = 'Whipski';
 
-console.log(name);
+console.log(fname);
 
 //Constants
 
