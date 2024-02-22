@@ -15,3 +15,4 @@
 * llegar - To arrive
 * abrir - to open
 * esperanza - hope
+* el portátil - the laptop
