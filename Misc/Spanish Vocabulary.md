@@ -1,4 +1,4 @@
-**Vocabulary** 
+**Vocabulary**
 
 * el pajaro - Bird
 * profundo - Deep
@@ -16,3 +16,4 @@
 * abrir - to open
 * esperanza - hope
 * el portátil - the laptop
+* útil - Useful
