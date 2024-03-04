@@ -2,13 +2,13 @@
 
 Problem: 1700
 Official Difficulty: easy
-My Understanding: Mostly Understand
 Feels Like : easy
+My Understanding: Mostly Understand
 Topic: Queue, Stack, array, simulation
 Link: https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/
 Completed On : February 25, 2024
 Last Review: February 25, 2024
-Days Since Review: 1
+Days Since Review: 7
 
 ## Problem
 

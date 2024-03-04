@@ -2,13 +2,13 @@
 
 Problem: 2073
 Official Difficulty: easy
-My Understanding: Needs Review
 Feels Like : medium
+My Understanding: Needs Review
 Topic: Queue, array, simulation
 Link: https://leetcode.com/problems/time-needed-to-buy-tickets/description/
 Completed On : February 26, 2024
 Last Review: February 26, 2024
-Days Since Review: 0
+Days Since Review: 6
 
 ## Problem
 
