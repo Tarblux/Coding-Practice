@@ -8,7 +8,7 @@ Topic: Bit Manipulation, Math, simulation, string
 Link: https://leetcode.com/problems/add-binary/description/
 Completed On : March 3, 2024
 Last Review: March 3, 2024
-Days Since Review: 0
+Days Since Review: 7
 
 ## Problem
 
