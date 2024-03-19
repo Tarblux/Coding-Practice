@@ -1,6 +1,6 @@
-* [X] **Monday** : Time Needed to Buy Tickets
-* [X] **Tuesday** : Power of Two and Best Time to Buy and Sell With Transaction Fee
-* [X] **Wednesday** : Even Odd Tree
-* [X] **Thursday**: Jump Game II
+* [X] **Monday** : Maximum Product of Words Lengths
+* [X] **Tuesday** : Hamming Distance and Reverse Bits
+* [X] **Wednesday** :
+* [X] **Thursday**:
 
 Note : Remember to update notion review list on thursdays !!!!
