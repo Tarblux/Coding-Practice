@@ -8,7 +8,7 @@ Topic: database
 Link: https://leetcode.com/problems/combine-two-tables/description/
 Completed On : February 29, 2024
 Last Review: February 29, 2024
-Days Since Review: 3
+Days Since Review: 61
 
 ## Problem
 

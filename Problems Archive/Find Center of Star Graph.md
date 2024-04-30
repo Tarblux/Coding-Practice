@@ -8,7 +8,7 @@ Topic: graph
 Link: https://leetcode.com/problems/find-center-of-star-graph/
 Completed On : March 5, 2024
 Last Review: March 5, 2024
-Days Since Review: 5
+Days Since Review: 56
 
 ## Problem
 

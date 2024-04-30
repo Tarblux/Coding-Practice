@@ -8,7 +8,7 @@ Topic: array, binary search
 Link: https://leetcode.com/problems/binary-search/description/
 Completed On : March 5, 2024
 Last Review: March 5, 2024
-Days Since Review: 5
+Days Since Review: 56
 
 ## Problem
 
