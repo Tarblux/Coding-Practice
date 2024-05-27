@@ -8,7 +8,7 @@ Topic: Matrix, array, string, string matching
 Link: https://leetcode.com/problems/valid-word-square/description/
 Completed On : May 19, 2024
 Last Review: May 19, 2024
-Days Since Review: 0
+Days Since Review: 7
 
 ## Problem
 
