@@ -8,7 +8,7 @@ Topic: array, binary search
 Link: https://leetcode.com/problems/kth-missing-positive-number/
 Completed On : June 2, 2024
 Last Review: June 2, 2024
-Days Since Review: 1
+Days Since Review: 7
 
 ## Problem
 
