@@ -3,12 +3,12 @@
 Problem: 752
 Official Difficulty: medium
 Feels Like : hard
-My Understanding: Needs Review
+My Understanding: Mostly Understand
 Topic: Breadth-First Search(BFS), array, hash table, string
 Link: https://leetcode.com/problems/open-the-lock/description/?envType=daily-question&envId=2024-04-22
 Completed On : April 22, 2024
-Last Review: April 22, 2024
-Days Since Review: 8
+Last Review: June 26, 2024
+Days Since Review: 5
 
 ## Problem
 
@@ -69,44 +69,51 @@ Explanation: We cannot reach the target without getting stuck.
 
 ```python
 class Solution:
+    
+    def neighbors(self,code:str) -> List[str]:
+        
+        output = []
+        
+        for i in range(len(code)):
+            
+            up = (int(code[i]) + 1) % 10
+            down = (int(code[i]) - 1) % 10
+            
+            up_string = code[:i] + str(up) + code[i+1:]
+            down_string = code[:i]+str(down)+code[i+1:]
+            
+            output.append(up_string)
+            output.append(down_string)
+            
+        return output
+    
     def openLock(self, deadends: List[str], target: str) -> int:
-
-        wheel = [str(n) for n in range(10)]
-        queue = deque([("0000",0)])
+        
         visited = set()
-        visited.add("0000")
-        deadends_dict = defaultdict(bool)
-
+        queue = deque([('0000',0)])
+        
         for de in deadends:
-            deadends_dict[de] = True
-
+            visited.add(de)
+            
         while queue:
-
-            cur_display , step = queue.popleft()
-
-            if cur_display in deadends_dict:
+            
+            state , moves = queue.popleft()
+            
+            if state in visited:
                 continue
-
-            if cur_display == target:
-                return step
-
-            for i in range(4):
-
-                idx = int(cur_display[i])
-                new_display1 = cur_display[:i] + wheel[(idx+1)%10]
-                new_display2 = cur_display[:i] + wheel[(idx-1)%10]
-
-                if i + 1 < 4:
-                    new_display1 += cur_display[i+1:]
-                    new_display2 += cur_display[i+1:]
-                if new_display1 not in visited:
-                    queue.append((new_display1,step+1))
-                    visited.add(new_display1)
-                if new_display2 not in visited:
-                    queue.append((new_display2,step+1))
-                    visited.add(new_display2)
+            
+            visited.add(state)
+            
+            if state == target:
+                return moves
+            
+            neighbors = self.neighbors(state)
+            neighbors_moves = [(n,moves+1) for n in neighbors]
+            
+            queue.extend(neighbors_moves)
 
         return -1
+        
 ```
 
 ## Chau

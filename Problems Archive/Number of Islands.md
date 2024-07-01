@@ -2,13 +2,13 @@
 
 Problem: 200
 Official Difficulty: medium
-My Understanding: I Have No Idea
-Feels Like : hard
+Feels Like : medium
+My Understanding: Mostly Understand
 Topic: Breadth-First Search(BFS), Depth-First Search (DFS), Matrix, array, union find
 Link: https://leetcode.com/problems/number-of-islands/description/
 Completed On : February 20, 2024
-Last Review: February 20, 2024
-Days Since Review: 6
+Last Review: June 26, 2024
+Days Since Review: 5
 
 ## Problem
 
@@ -93,8 +93,47 @@ class Solution:
         return count
 ```
 
-```python
+Actually wrote it myself this time :)
 
+```python
+from typing import List
+
+class Solution:
+    
+    def dfs(self,matrix:List[List[str]],r:int,c:int) -> None:
+        
+        if r < 0 or r >= len(matrix) or c < 0 or c >= len(matrix[0]):
+            return
+        
+        if matrix[r][c] == '0':
+            return
+        
+        directions = [(-1,0),(1,0),(0,-1),(0,1)]
+
+        matrix[r][c] = '0'
+        
+        for dr,dc in directions:
+            
+            self.dfs(matrix,r + dr , c + dc)
+            
+        return
+    
+    def numIslands(self,grid:List[List[str]]) -> int:
+        
+        if not grid:
+            return 0
+        
+        islands = 0
+        
+        for r in range(len(grid)):
+            for c in range(len(grid[0])):
+                
+                if grid[r][c] == '1':
+                    
+                    self.dfs(grid,r,c)
+                    islands += 1
+                    
+        return islands
 ```
 
 ## Optimal Solutions
