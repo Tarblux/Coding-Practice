@@ -8,7 +8,7 @@ Topic: Counting, Divide and Conquer, array, hash table
 Link: https://leetcode.com/problems/majority-element/description/
 Completed On : June 16, 2024
 Last Review: June 16, 2024
-Days Since Review: 0
+Days Since Review: 54
 
 ## Problem
 

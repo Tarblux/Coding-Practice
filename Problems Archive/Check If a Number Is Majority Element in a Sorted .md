@@ -8,7 +8,7 @@ Topic: array, binary search
 Link: https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array/description/
 Completed On : June 16, 2024
 Last Review: June 16, 2024
-Days Since Review: 0
+Days Since Review: 54
 
 ## Problem
 

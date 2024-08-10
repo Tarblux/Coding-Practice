@@ -8,7 +8,7 @@ Topic: array, simulation
 Link: https://leetcode.com/problems/average-waiting-time/description/
 Completed On : July 9, 2024
 Last Review: July 9, 2024
-Days Since Review: 2
+Days Since Review: 31
 
 ## Problem
 

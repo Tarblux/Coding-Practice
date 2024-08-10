@@ -1,4 +1,4 @@
-# Problem Name
+# Pass The Pillow
 
 Problem: 2582
 Official Difficulty: easy
@@ -8,7 +8,7 @@ Topic: Math, simulation
 Link: https://leetcode.com/problems/pass-the-pillow/description/
 Completed On : July 6, 2024
 Last Review: July 6, 2024
-Days Since Review: 5
+Days Since Review: 34
 
 ## Problem
 

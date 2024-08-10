@@ -8,7 +8,7 @@ Topic: Breadth-First Search(BFS), Depth-First Search (DFS), Matrix, array, union
 Link: https://leetcode.com/problems/max-area-of-island/description/
 Completed On : June 30, 2024
 Last Review: June 30, 2024
-Days Since Review: 1
+Days Since Review: 40
 
 ## Problem
 

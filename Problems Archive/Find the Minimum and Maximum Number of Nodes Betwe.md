@@ -8,7 +8,7 @@ Topic: linked list
 Link: https://leetcode.com/problems/find-the-minimum-and-maximum-number-of-nodes-between-critical-points/description/
 Completed On : July 5, 2024
 Last Review: July 5, 2024
-Days Since Review: 6
+Days Since Review: 35
 
 ## Problem
 

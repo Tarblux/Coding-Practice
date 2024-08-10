@@ -8,7 +8,7 @@ Topic: array
 Link: https://leetcode.com/problems/three-consecutive-odds/description/
 Completed On : July 1, 2024
 Last Review: July 1, 2024
-Days Since Review: 10
+Days Since Review: 39
 
 ## Problem
 

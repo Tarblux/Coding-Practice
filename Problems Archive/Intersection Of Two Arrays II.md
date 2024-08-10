@@ -2,12 +2,13 @@
 
 Problem: 350
 Official Difficulty: easy
+Feels Like : easy
+My Understanding: Fully Understand
 Topic: binary search, hash table, sorting, two pointers
 Link: https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
 Completed On : November 11, 2023
-My Understanding: I Have No Idea, Needs Review
-Last Review: November 11, 2023
-Days Since Review: 91
+Last Review: July 1, 2024
+Days Since Review: 39
 
 ## Problem
 
@@ -84,7 +85,28 @@ class Solution(object):
 ```
 
 ```python
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
 
+        n1 = defaultdict(int)
+        n2 = defaultdict(int)
+
+        for num in nums1:
+            n1[num] += 1
+
+        for num in nums2:
+            n2[num] += 1
+
+        output = []
+
+        for num in n1:
+            if num in n2:
+                cur = [num]*min(n1[num],n2[num])
+                output.extend(cur)
+
+        return output
+
+ 
 ```
 
 ## Optimal Solutions

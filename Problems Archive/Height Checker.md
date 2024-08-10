@@ -8,7 +8,7 @@ Topic: array, counting sort, sorting
 Link: https://leetcode.com/problems/height-checker/description/
 Completed On : June 10, 2024
 Last Review: June 10, 2024
-Days Since Review: 6
+Days Since Review: 60
 
 ## Problem
 

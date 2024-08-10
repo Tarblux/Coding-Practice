@@ -8,7 +8,7 @@ Topic: Math, string
 Link: https://leetcode.com/problems/happy-number/description/
 Completed On : June 18, 2024
 Last Review: June 28, 2024
-Days Since Review: 13
+Days Since Review: 42
 
 ## Problem
 

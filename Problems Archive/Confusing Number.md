@@ -8,7 +8,7 @@ Topic: Math
 Link: https://leetcode.com/problems/confusing-number/description/
 Completed On : June 12, 2024
 Last Review: June 12, 2024
-Days Since Review: 4
+Days Since Review: 58
 
 ## Problem
 
