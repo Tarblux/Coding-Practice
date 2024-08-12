@@ -3,12 +3,12 @@
 Problem: 7
 Official Difficulty: medium
 Feels Like : easy
+My Understanding: Mostly Understand
 Topic: Math
 Link: https://leetcode.com/problems/reverse-integer/
 Completed On : November 18, 2023
-My Understanding: Mostly Understand
-Last Review: November 18, 2023
-Days Since Review: 84
+Last Review: August 11, 2024
+Days Since Review: 0
 
 ## Problem
 
@@ -50,7 +50,29 @@ class Solution(object):
 ```
 
 ```python
+class Solution:
+    def reverse(self, x: int) -> int:
 
+        negative = 1
+        if x < 0 :
+            negative = -1
+
+        output = 0
+        x = abs(x)
+        n = len(str(x)) - 1
+        place = 10 ** (n)
+
+        while x :
+            
+            x , digit = divmod(x,10)
+            if digit:
+                output += place * digit
+            place //= 10
+
+        if output >= 2**31 - 1 or output <= -2 ** 31:
+            return 0 
+        
+        return output * negative   
 ```
 
 ## Optimal Solutions
