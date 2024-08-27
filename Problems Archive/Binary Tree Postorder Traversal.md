@@ -7,8 +7,8 @@ My Understanding: Fully Understand
 Topic: Depth-First Search (DFS), Stack, binary tree, tree
 Link: https://leetcode.com/problems/binary-tree-postorder-traversal/description/
 Completed On : March 25, 2024
-Last Review: March 25, 2024
-Days Since Review: 36
+Last Review: August 25, 2024
+Days Since Review: 1
 
 ## Problem
 
@@ -67,6 +67,32 @@ class Solution:
             return []
 
         return self.postorderTraversal(root.left)  + self.postorderTraversal(root.right) + [root.val]
+```
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+
+    def __init__(self):
+        self.output = []
+
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+
+        if not root:
+            return
+
+        self.postorderTraversal(root.left)
+
+        self.postorderTraversal(root.right)
+
+        self.output.append(root.val)
+
+        return self.output
 ```
 
 ```python
