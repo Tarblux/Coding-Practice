@@ -126,7 +126,51 @@ class Solution:
 ```
 
 ```python
+from collections import defaultdict
 
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        
+        rows = defaultdict(str)
+        output = ''
+        i = 0
+        r = 0
+        
+        while i < len(s):
+            
+            for down in range(numRows):
+                
+                if i >= len(s):
+                    break
+        
+                rows[r] += s[i]
+                r += 1
+                i += 1
+                
+            r -= 2
+                
+            for diag in range(numRows- 2):
+                
+                if i >= len(s):
+                    break
+                
+                rows[r] += s[i]
+                r -= 1
+                i += 1
+        
+        print(rows) 
+        
+        for row in rows.values():
+            output += row
+            
+        return output
+                
+
+test = Solution()
+test.convert('PAYPALISHIRING',4)       
+        
+# Input: s = "PAYPALISHIRING", numRows = 4
+# Output: "PINALSIGYAHRPI"       
 ```
 
 ## Optimal Solutions
