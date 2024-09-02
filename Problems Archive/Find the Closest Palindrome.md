@@ -8,7 +8,7 @@ Topic: Math, string
 Link: https://leetcode.com/problems/find-the-closest-palindrome/description/
 Completed On : August 25, 2024
 Last Review: August 25, 2024
-Days Since Review: 1
+Days Since Review: 7
 
 ## Problem
 

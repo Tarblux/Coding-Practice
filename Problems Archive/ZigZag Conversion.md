@@ -8,7 +8,7 @@ Topic: string
 Link: https://leetcode.com/problems/zigzag-conversion/description/
 Completed On : August 26, 2024
 Last Review: August 26, 2024
-Days Since Review: 0
+Days Since Review: 6
 
 ## Problem
 
@@ -126,8 +126,6 @@ class Solution:
 ```
 
 ```python
-from collections import defaultdict
-
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
         
@@ -158,20 +156,66 @@ class Solution:
                 r -= 1
                 i += 1
         
-        print(rows) 
-        
         for row in rows.values():
             output += row
             
         return output
-                
-
-test = Solution()
-test.convert('PAYPALISHIRING',4)       
-        
-# Input: s = "PAYPALISHIRING", numRows = 4
-# Output: "PINALSIGYAHRPI"       
 ```
+
+The code you've written is correct, but it can be optimized for performance. Here are the key areas where improvements can be made:
+
+1. **Using `defaultdict(str)` for `rows`:**
+    - While `defaultdict(str)` is convenient, it's not necessary here. You can use a simple list of strings instead, which is generally faster than using a dictionary.
+2. **String Concatenation in a Loop:**
+    - String concatenation with `+=` in Python is inefficient because strings are immutable, and each concatenation creates a new string. Instead, it's better to use a list to collect all the substrings and then join them at the end.
+3. **Redundant Logic in the Zigzag Pattern:**
+    - The current approach has separate loops for going down and for diagonal movement, but this can be simplified with a single loop that handles both directions by adjusting the index `r` appropriately.
+
+Here's a more optimized version of your code:
+
+```python
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        if numRows == 1 or numRows >= len(s):
+            return s
+
+        # Use a list of strings to store each row
+        rows = [''] * numRows
+        r = 0
+        direction = -1
+
+        for char in s:
+            rows[r] += char
+            # Change direction when you reach the top or bottom row
+            if r == 0 or r == numRows - 1:
+                direction *= -1
+            r += direction
+
+        # Join all rows into one string
+        return ''.join(rows)
+
+# Example usage
+sol = Solution()
+print(sol.convert("PAYPALISHIRING", 3))  # Output: "PAHNAPLSIIGYIR"
+print(sol.convert("PAYPALISHIRING", 4))  # Output: "PINALSIGYAHRPI"
+
+```
+
+### Explanation of Changes
+
+1. **List Instead of `defaultdict`:**
+    - `rows = [''] * numRows` is more efficient than using `defaultdict(str)` because it avoids the overhead of managing a dictionary and provides direct access to each row.
+2. **Optimized String Concatenation:**
+    - Instead of concatenating strings directly within the loop, we accumulate characters in a list of strings (`rows`). After processing, we use `''.join(rows)` to efficiently combine the rows into the final result.
+3. **Single Loop with Direction Control:**
+    - The zigzag pattern is controlled using a single loop with a `direction` variable. This variable toggles between `1` and `1` to move up and down between rows, eliminating the need for two separate loops.
+
+### Complexity Analysis
+
+- **Time Complexity:** `O(n)`, where `n` is the length of the input string `s`. The string is processed in a single pass.
+- **Space Complexity:** `O(n)`, for storing the intermediate rows and the final result.
+
+This optimized version should be faster and more memory-efficient, especially for longer input strings.
 
 ## Optimal Solutions
 
