@@ -8,7 +8,7 @@ Topic: Breadth-First Search(BFS), hash table, string
 Link: https://leetcode.com/problems/word-ladder/description/
 Completed On : September 8, 2024
 Last Review: September 8, 2024
-Days Since Review: 0
+Days Since Review: 8
 
 ## Problem
 
