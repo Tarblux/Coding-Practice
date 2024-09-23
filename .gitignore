@@ -1,5 +1,6 @@
 node_modules 
 
+
 # Compiled byte code
 *.o
 *.so
@@ -38,3 +39,5 @@ Cargo.lock
 *.swo
 *.swn
 *.bak
+
+.DS_Store
