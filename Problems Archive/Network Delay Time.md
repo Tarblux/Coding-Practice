@@ -8,7 +8,7 @@ Topic: Breadth-First Search(BFS), Depth-First Search (DFS), Heap(Priority Queue)
 Link: https://leetcode.com/problems/network-delay-time/description/?envType=problem-list-v2&envId=m3a0vf7e
 Completed On : September 17, 2024
 Last Review: September 17, 2024
-Days Since Review: 0
+Days Since Review: 6
 
 ## Problem
 
