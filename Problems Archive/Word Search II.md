@@ -8,7 +8,7 @@ Topic: Matrix, Trie, array, backtracking, string
 Link: https://leetcode.com/problems/word-search-ii/description/?envType=problem-list-v2&envId=amidiy65
 Completed On : September 21, 2024
 Last Review: September 21, 2024
-Days Since Review: 2
+Days Since Review: 12
 
 ## Problem
 

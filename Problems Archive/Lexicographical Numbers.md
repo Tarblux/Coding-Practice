@@ -8,7 +8,7 @@ Topic: Depth-First Search (DFS), Trie
 Link: https://leetcode.com/problems/lexicographical-numbers/description/
 Completed On : September 20, 2024
 Last Review: September 20, 2024
-Days Since Review: 3
+Days Since Review: 13
 
 ## Problem
 

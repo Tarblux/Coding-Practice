@@ -8,7 +8,7 @@ Topic: Depth-First Search (DFS), Trie, design, string
 Link: https://leetcode.com/problems/design-add-and-search-words-data-structure/description/
 Completed On : September 21, 2024
 Last Review: September 21, 2024
-Days Since Review: 2
+Days Since Review: 12
 
 ## Problem
 
@@ -64,7 +64,7 @@ class WordDictionary:
 
     def __init__(self):
         self.root = TrieNode()
-  
+        
     def addWord(self, word: str) -> None:
 
         node = self.root
@@ -72,6 +72,7 @@ class WordDictionary:
         for char in  word:
             if char not in node.children:
                 node.children[char] = TrieNode()
+                node.children['.'] = TrieNode()
             node = node.children[char]
 
         node.eow = True
@@ -85,8 +86,8 @@ class WordDictionary:
 
         if char == '.':
 
-            for child in node.children.values():
-                if self.dfs(word,index + 1,child):
+            for char in node.children.values():
+                if self.dfs(word,index + 1,char):
                     return True
             return False
         else:
@@ -95,11 +96,11 @@ class WordDictionary:
                 return False
             return self.dfs(word,index + 1,node.children[char])
 
-  
+        
     def search(self, word: str) -> bool:
 
         return self.dfs(word,0,self.root)
-  
+            
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()
 # obj.addWord(word)
@@ -128,18 +129,18 @@ A **Trie** is a tree-like data structure that efficiently stores a dynamic set o
 ### Steps to Implement:
 
 1. **Trie Node Structure**:
-   - Each node in the Trie will represent a character.
-   - Each node will have:
-     - A dictionary (`children`) to store child nodes.
-     - A boolean flag (`isEnd`) to indicate if the current node represents the end of a word.
+    - Each node in the Trie will represent a character.
+    - Each node will have:
+        - A dictionary (`children`) to store child nodes.
+        - A boolean flag (`isEnd`) to indicate if the current node represents the end of a word.
 2. **Add Word Operation**:
-   - Traverse the Trie according to each character in the word.
-   - Create new nodes as necessary.
-   - Mark the last node as the end of a word.
+    - Traverse the Trie according to each character in the word.
+    - Create new nodes as necessary.
+    - Mark the last node as the end of a word.
 3. **Search Operation**:
-   - If the search word contains a `.`, recursively explore all possible children nodes.
-   - If the character is not a `.`, continue the search in the corresponding child node.
-   - If we reach the end of the word and the node is marked as `isEnd`, return `True`.
+    - If the search word contains a `.`, recursively explore all possible children nodes.
+    - If the character is not a `.`, continue the search in the corresponding child node.
+    - If we reach the end of the word and the node is marked as `isEnd`, return `True`.
 
 ### Python Implementation:
 
@@ -199,30 +200,32 @@ print(wd.search("b.."))  # Output: True ("bad" matches)
 ### Explanation:
 
 1. **TrieNode Class**:
-   - Each `TrieNode` has a dictionary `children` to store references to its child nodes and a boolean `isEnd` to indicate if it marks the end of a word.
+    - Each `TrieNode` has a dictionary `children` to store references to its child nodes and a boolean `isEnd` to indicate if it marks the end of a word.
 2. **WordDictionary Class**:
-   - The `addWord` method iteratively adds each character of the word to the Trie, creating new nodes as needed and marking the last node as `isEnd`.
-   - The `search` method uses a helper function `dfs` to recursively search the Trie:
-     - If the current character is a dot (`.`), it recursively checks all child nodes.
-     - If the character is not a dot and exists in the children, it moves to that child node.
-     - If it reaches the end of the word and `isEnd` is `True`, the word is found.
+    - The `addWord` method iteratively adds each character of the word to the Trie, creating new nodes as needed and marking the last node as `isEnd`.
+    - The `search` method uses a helper function `dfs` to recursively search the Trie:
+        - If the current character is a dot (`.`), it recursively checks all child nodes.
+        - If the character is not a dot and exists in the children, it moves to that child node.
+        - If it reaches the end of the word and `isEnd` is `True`, the word is found.
 3. **Example Usage**:
-   - Adding words like "bad", "dad", and "mad".
-   - Searching for patterns like "pad" (no match), "bad" (exact match), ".ad" (matches all), and "b.." (matches "bad").
+    - Adding words like "bad", "dad", and "mad".
+    - Searching for patterns like "pad" (no match), "bad" (exact match), ".ad" (matches all), and "b.." (matches "bad").
 
 ### Complexity Analysis:
 
 1. **Time Complexity**:
-   - `addWord`: `O(n)`, where `n` is the length of the word being added.
-   - `search`: In the worst case, the search can be `O(m * 26^m)`, where `m` is the length of the word, and `26^m` accounts for the case where all characters are `.`.
+    - `addWord`: `O(n)`, where `n` is the length of the word being added.
+    - `search`: In the worst case, the search can be `O(m * 26^m)`, where `m` is the length of the word, and `26^m` accounts for the case where all characters are `.`.
 2. **Space Complexity**:
-   - `O(T)`, where `T` is the total number of characters in all words added to the Trie. Each character uses additional space for storing child nodes.
+    - `O(T)`, where `T` is the total number of characters in all words added to the Trie. Each character uses additional space for storing child nodes.
 
 This implementation efficiently handles word additions and searches, supporting complex pattern matching with the `.` wildcard, and is well-suited for dictionary and word search problems.
 
 ## Notes
 
 ---
+
+ 
 
 ## Related Videos
 
