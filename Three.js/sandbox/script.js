@@ -24,8 +24,8 @@ window.addEventListener('mousemove',(event) =>
 // Sizes
 
 const sizes = {
-    width : 800,
-    height : 600
+    width : window.innerWidth,
+    height : window.innerHeight
 }
 
 // Canvas
@@ -97,10 +97,12 @@ scene.add(camera)
 
 const renderer = new THREE.WebGLRenderer({canvas:canvas})
 renderer.setSize(sizes.width,sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 // Controls
 
 const controls = new OrbitControls(camera,canvas)
+controls.enableDamping = true
 
 
 /**
@@ -125,6 +127,22 @@ const tick = () =>{
     // mesh.rotation.y += 0.01
     // mesh.rotation.x += 0.01
     // mesh.rotation.x = Math.cos(elapsedTime)
+
+    controls.update()
+
+    window.addEventListener('resize', () =>
+        {
+            // Update sizes
+            sizes.width = window.innerWidth
+            sizes.height = window.innerHeight
+        
+            // Update camera
+            camera.aspect = sizes.width / sizes.height
+            camera.updateProjectionMatrix()
+        
+            // Update renderer
+            renderer.setSize(sizes.width, sizes.height)
+        })
 
     // Animated Renderer
     renderer.render(scene,camera)
