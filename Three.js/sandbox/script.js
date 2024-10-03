@@ -1,11 +1,25 @@
 import './style.css'
 import * as THREE from 'three'
 import gsap from 'gsap'
+import { OrbitControls } from 'three/examples/jsm/Addons.js'
 
-// Canvas
 
-const canvas = document.querySelector('.webgl')
+/**
+ * Cursor
+ */
 
+const cursor = {
+    x:0,
+    y:0
+}
+
+window.addEventListener('mousemove',(event) => 
+{
+   cursor.x = event.clientX / sizes.width - 0.5
+   cursor.y = -(event.clientY / sizes.height - 0.5)
+//    console.log(cursor.x)
+
+})
 
 // Sizes
 
@@ -13,6 +27,10 @@ const sizes = {
     width : 800,
     height : 600
 }
+
+// Canvas
+
+const canvas = document.querySelector('.webgl')
 
 // Scene
 
@@ -60,17 +78,29 @@ scene.add(mesh)
 
   
 
-// Camera 
+// Cameras
 
 const camera = new THREE.PerspectiveCamera(75,sizes.width/sizes.height)
 camera.position.set(1.5,2,5)
 camera.lookAt(new THREE.Vector3(0,-1,0))
 scene.add(camera)
 
+
+// const aspectRatio = sizes.width / sizes.height
+// const orthocamera = new THREE.OrthographicCamera(-1 * aspectRatio,1*aspectRatio,1,-1,0.1,100)
+// orthocamera.position.set(1,1,2)
+// orthocamera.lookAt(new THREE.Vector3(0,-1,0))
+// scene.add(orthocamera)
+
+
 // renderer
 
 const renderer = new THREE.WebGLRenderer({canvas:canvas})
 renderer.setSize(sizes.width,sizes.height)
+
+// Controls
+
+const controls = new OrbitControls(camera,canvas)
 
 
 /**
@@ -98,6 +128,12 @@ const tick = () =>{
 
     // Animated Renderer
     renderer.render(scene,camera)
+
+    // // Linking camera to mouse movements
+    // camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 2
+    // camera.position.z = Math.cos(cursor.x * Math.PI * 2) * 2
+    // camera.position.y = cursor.y * 3
+    // camera.lookAt(mesh.position)
 
     window.requestAnimationFrame(tick)
 }
