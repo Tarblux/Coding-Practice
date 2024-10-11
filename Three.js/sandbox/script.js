@@ -2,6 +2,13 @@ import './style.css'
 import * as THREE from 'three'
 import gsap from 'gsap'
 import { OrbitControls } from 'three/examples/jsm/Addons.js'
+import GUI from 'lil-gui'
+
+/**
+ * Debug
+ */
+
+const gui = new GUI()
 
 
 /**
@@ -58,6 +65,7 @@ const materials = [
 
 const mesh = new THREE.Mesh(geometry, materials)
 mesh.scale.set(1,1,1)
+gui.add(mesh.scale,'x',1,5,0.01).name('Width')
 // mesh.rotation.x = Math.PI * 0.25
 // mesh.rotation.y = Math.PI * 0.25
 scene.add(mesh)
