@@ -6,7 +6,7 @@ Feels Like : easy
 Topic: array, hash table, sliding window
 My Understanding: Fully Understand
 Last Review: 2024-10-08
-Days Since Review: 1
+Days Since Review: 6
 Name: Contains Duplicate II
 
 # Contains Duplicate II

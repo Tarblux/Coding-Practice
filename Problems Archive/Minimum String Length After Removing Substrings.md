@@ -6,7 +6,7 @@ Feels Like : easy
 Topic: string, Stack, simulation
 My Understanding: Mostly Understand
 Last Review: 2024-10-06
-Days Since Review: 3
+Days Since Review: 8
 Name: Minimum String Length After Removing Substrings
 
 # Minimum String Length After Removing Substrings
