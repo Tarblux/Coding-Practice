@@ -42,22 +42,18 @@ Output: [[],[0]]
 
 ## My Solutions
 
----
-
-```python
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         def backtrack(state,start,output):
 
-            output.append(state)
+    output.append(state)
 
-            for i in range(start,len(nums)):
+    for i in range(start,len(nums)):
                 backtrack(state + [nums[i]],i+1,output)
 
-        output = []
+    output = []
         backtrack([],0,output)
         return output
-```
 
 ```python
 
@@ -81,13 +77,13 @@ This method uses recursion to explore all possible subsets by making a choice at
 
 1. **Initialize** an empty list to hold all subsets.
 2. **Define** a recursive function that takes three parameters:
-    - The current subset being built.
-    - The index of the next element to consider.
-    - The original array `nums`.
+   - The current subset being built.
+   - The index of the next element to consider.
+   - The original array `nums`.
 3. **Base Case:** If the index equals the length of `nums`, add the current subset to the list of subsets.
 4. **Recursive Case:**
-    - **Include** the current element and recurse.
-    - **Exclude** the current element and recurse.
+   - **Include** the current element and recurse.
+   - **Exclude** the current element and recurse.
 
 **Code Snippet:**
 
@@ -109,10 +105,10 @@ def subsets(nums):
 
 ```
 
-**Time Complexity:** O(2<sup>n</sup>)
+**Time Complexity:** O(2`<sup>`n`</sup>`)
 
 - Each element has two choices: include or exclude.
-- Total subsets = 2<sup>n</sup>.
+- Total subsets = 2`<sup>`n`</sup>`.
 
 **Space Complexity:** O(n)
 
@@ -131,8 +127,8 @@ This method builds subsets iteratively by adding each element to existing subset
 
 1. **Start** with an empty subset: `[[]]`.
 2. **Iterate** over each element `num` in `nums`:
-    - For each existing subset, create a new subset by adding `num`.
-    - **Extend** the list of subsets with these new subsets.
+   - For each existing subset, create a new subset by adding `num`.
+   - **Extend** the list of subsets with these new subsets.
 
 **Code Snippet:**
 
@@ -145,11 +141,11 @@ def subsets(nums):
 
 ```
 
-**Time Complexity:** O(2<sup>n</sup>)
+**Time Complexity:** O(2`<sup>`n`</sup>`)
 
 - At each step, the number of subsets doubles.
 
-**Space Complexity:** O(2<sup>n</sup>)
+**Space Complexity:** O(2`<sup>`n`</sup>`)
 
 - Storing all subsets.
 
@@ -165,8 +161,8 @@ Utilize binary representations to generate all possible combinations.
 
 1. **Calculate** the total number of subsets: `2 ** n`.
 2. **Iterate** from `0` to `2 ** n - 1`:
-    - For each number `i`, generate a subset by including elements where the bit is set.
-    - Use bitwise operations to check if a bit is set.
+   - For each number `i`, generate a subset by including elements where the bit is set.
+   - Use bitwise operations to check if a bit is set.
 
 **Code Snippet:**
 
@@ -185,12 +181,12 @@ def subsets(nums):
 
 ```
 
-**Time Complexity:** O(n * 2<sup>n</sup>)
+**Time Complexity:** O(n * 2`<sup>`n`</sup>`)
 
-- Iterating over 2<sup>n</sup> numbers.
+- Iterating over 2`<sup>`n`</sup>` numbers.
 - For each number, checking n bits.
 
-**Space Complexity:** O(2<sup>n</sup> * n)
+**Space Complexity:** O(2`<sup>`n`</sup>` * n)
 
 - Storing all subsets, each can have up to n elements.
 
@@ -198,7 +194,7 @@ def subsets(nums):
 
 ### **Comparison and Recommendations**
 
-- **All methods have a time complexity of O(2<sup>n</sup>)**, which is optimal for generating all subsets.
+- **All methods have a time complexity of O(2`<sup>`n`</sup>`)**, which is optimal for generating all subsets.
 - **Backtracking** is intuitive and easy to implement recursively.
 - **Iterative (Cascading)** is efficient and avoids recursion, which can be helpful to prevent stack overflow.
 - **Bit Manipulation** is elegant and can be faster in practice due to bitwise operations but may be less intuitive.
@@ -210,8 +206,6 @@ def subsets(nums):
 ## Notes
 
 ---
-
- 
 
 ## Related Videos
 
