@@ -6,7 +6,7 @@ Feels Like : easy
 Topic: array, greedy, Heap(Priority Queue)
 My Understanding: Fully Understand
 Last Review: 2024-10-13
-Days Since Review: 1
+Days Since Review: 7
 Name: Maximal Score After Applying K Operations
 
 # Maximal Score After Applying K Operations
