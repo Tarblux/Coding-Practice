@@ -6,7 +6,7 @@ Feels Like : easy
 Topic: string
 My Understanding: Fully Understand
 Last Review: 2024-10-31
-Days Since Review: 3
+Days Since Review: 4
 Name: Delete Characters to Make Fancy String
 
 # Delete Characters to Make Fancy String

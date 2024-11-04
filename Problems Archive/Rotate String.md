@@ -6,7 +6,7 @@ Feels Like : medium
 Topic: string, string matching
 My Understanding: Fully Understand
 Last Review: 2024-11-02
-Days Since Review: 1
+Days Since Review: 2
 Name: Rotate String
 
 # Rotate String
