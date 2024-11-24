@@ -6,7 +6,7 @@ Feels Like : hard
 Topic: hash table, linked list, design, Heap(Priority Queue)
 My Understanding: I Have No Idea
 Last Review: 2024-11-16
-Days Since Review: 1
+Days Since Review: 8
 Name: Design Twitter
 
 # Design Twitter
