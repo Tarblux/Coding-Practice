@@ -1,26 +1,34 @@
+# Find Median from Data Stream
+
 Problem: 295
 Official Difficulty: hard
-Link: https://leetcode.com/problems/find-median-from-data-stream/description/?envType=problem-list-v2&envId=m7475vs1&difficulty=HARD
-Completed On : 2024-12-10
 Feels Like : hard
-Topic: two pointers, design, sorting, Heap(Priority Queue), Data Stream
 My Understanding: Needs Review
-Last Review: 2024-12-10
-Days Since Review: 5
-Name: Find Median from Data Stream
+Topic: Data Stream, Heap(Priority Queue), design, sorting, two pointers
+Link: https://leetcode.com/problems/find-median-from-data-stream/description/?envType=problem-list-v2&envId=m7475vs1&difficulty=HARD
+Completed On : December 10, 2024
+Last Review: December 10, 2024
+Days Since Review: 82
+Neetcode: Yes
 
-# Find Median from Data Stream
-### Problem
-___
+## Problem
+
+---
+
 The **median** is the middle value in an ordered integer list. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values.
+
 - For example, for `arr = [2,3,4]`, the median is `3`.
 - For example, for `arr = [2,3]`, the median is `(2 + 3) / 2 = 2.5`.
+
 Implement the MedianFinder class:
+
 - `MedianFinder()` initializes the `MedianFinder` object.
 - `void addNum(int num)` adds the integer `num` from the data stream to the data structure.
 - `double findMedian()` returns the median of all elements so far. Answers within `105` of the actual answer will be accepted.
+
 **Example 1:**
-```plain text
+
+```
 Input
 ["MedianFinder", "addNum", "addNum", "findMedian", "addNum", "findMedian"]
 [[], [1], [2], [], [3], []]
@@ -35,34 +43,47 @@ medianFinder.findMedian(); // return 1.5 (i.e., (1 + 2) / 2)
 medianFinder.addNum(3);    // arr[1, 2, 3]
 medianFinder.findMedian(); // return 2.0
 ```
+
 **Constraints:**
+
 - `105 <= num <= 105`
 - There will be at least one element in the data structure before calling `findMedian`.
 - At most `5 * 104` calls will be made to `addNum` and `findMedian`.
+
 **Follow up:**
+
 - If all integer numbers from the stream are in the range `[0, 100]`, how would you optimize your solution?
 - If `99%` of all integer numbers from the stream are in the range `[0, 100]`, how would you optimize your solution?
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
+
+---
+
 To maintain the median in a data stream, use two heaps: a max-heap for the lower half of numbers and a min-heap for the upper half. Ensure both heaps differ in size by at most one element. The max-heap stores smaller numbers (with the max at the top), and the min-heap stores larger numbers (with the min at the top).
+
 When a new number arrives, decide which heap to put it in based on its value relative to the heaps’ tops. If the max-heap is empty or the number is less than or equal to the max-heap’s top, push it into the max-heap. Otherwise, push it into the min-heap. After insertion, rebalance if one heap’s size exceeds the other’s by more than one.
+
 To find the median:
+
 - If both heaps are of equal size, the median is the average of the tops of both heaps.
 - If one heap has an extra element, the median is the top of that heap.
+
 This approach ensures O(log n) insertion time and O(1) median retrieval time.
+
 **Code:**
+
 ```python
 import heapq
 
@@ -96,9 +117,15 @@ class MedianFinder:
             return float(self.min_heap[0])
 
 ```
-### Notes
-___
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[watch](https://www.youtube.com/watch?v=itmhHWaHupI&pp=ygUcZmluZCBtZWRpYW4gZnJvbSBkYXRhIHN0cmVhbQ%3D%3D)
+
+## Related Videos
+
+---
+
+[https://www.youtube.com/watch?v=itmhHWaHupI&pp=ygUcZmluZCBtZWRpYW4gZnJvbSBkYXRhIHN0cmVhbQ%3D%3D](https://www.youtube.com/watch?v=itmhHWaHupI&pp=ygUcZmluZCBtZWRpYW4gZnJvbSBkYXRhIHN0cmVhbQ%3D%3D)

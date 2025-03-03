@@ -1,38 +1,53 @@
+# N-Queens
+
 Problem: 51
 Official Difficulty: hard
-Link: https://leetcode.com/problems/n-queens/description/
-Completed On : 2024-10-21
 Feels Like : medium
-Topic: backtracking, string, array
 My Understanding: Needs Review
-Last Review: 2024-10-21
-Days Since Review: 6
-Name: N-Queens
+Topic: array, backtracking, string
+Link: https://leetcode.com/problems/n-queens/description/
+Completed On : October 21, 2024
+Last Review: October 21, 2024
+Days Since Review: 132
+Neetcode: Yes
 
-# N-Queens
-### Problem
-___
+## Problem
+
+---
+
 The **n-queens** puzzle is the problem of placing `n` queens on an `n x n` chessboard such that no two queens attack each other.
-Given an integer `n`, return *all distinct solutions to the ****n-queens puzzle***. You may return the answer in **any order**.
+
+Given an integer `n`, return *all distinct solutions to the **n-queens puzzle***. You may return the answer in **any order**.
+
 Each solution contains a distinct board configuration of the n-queens' placement, where `'Q'` and `'.'` both indicate a queen and an empty space, respectively.
+
 **Example 1:**
-![queens.jpg](https://assets.leetcode.com/uploads/2020/11/13/queens.jpg)
-```plain text
+
+![](https://assets.leetcode.com/uploads/2020/11/13/queens.jpg)
+
+```
 Input: n = 4
 Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
 Explanation: There exist two distinct solutions to the 4-queens puzzle as shown above
 
 ```
+
 **Example 2:**
-```plain text
+
+```
 Input: n = 1
 Output: [["Q"]]
 
 ```
+
 **Constraints:**
+
 - `1 <= n <= 9`
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
@@ -74,18 +89,22 @@ class Solution:
         return output
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
 
-### Notes
-___
+---
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[Ph95IHmRp5M](https://youtu.be/Ph95IHmRp5M)
+
+## Related Videos
+
+---
+
+[https://youtu.be/Ph95IHmRp5M](https://youtu.be/Ph95IHmRp5M)

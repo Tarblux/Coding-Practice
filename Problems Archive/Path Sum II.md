@@ -1,22 +1,29 @@
+# Path Sum II
+
 Problem: 113
 Official Difficulty: medium
-Link: https://leetcode.com/problems/path-sum-ii/description/
-Completed On : 2024-12-10
 Feels Like : medium
-Topic: backtracking, tree, Depth-First Search (DFS), binary tree
 My Understanding: Needs Review
-Last Review: 2024-12-10
-Days Since Review: 5
-Name: Path Sum II
+Topic: Depth-First Search (DFS), backtracking, binary tree, tree
+Link: https://leetcode.com/problems/path-sum-ii/description/
+Completed On : December 10, 2024
+Last Review: December 10, 2024
+Days Since Review: 82
+Neetcode: No
 
-# Path Sum II
-### Problem
-___
-Given the `root` of a binary tree and an integer `targetSum`, return *all ****root-to-leaf**** paths where the sum of the node values in the path equals *`targetSum`*. Each path should be returned as a list of the node ****values****, not node references*.
+## Problem
+
+---
+
+Given the `root` of a binary tree and an integer `targetSum`, return *all **root-to-leaf** paths where the sum of the node values in the path equals* `targetSum`*. Each path should be returned as a list of the node **values**, not node references*.
+
 A **root-to-leaf** path is a path starting from the root and ending at any leaf node. A **leaf** is a node with no children.
+
 **Example 1:**
-![pathsumii1.jpg](https://assets.leetcode.com/uploads/2021/01/18/pathsumii1.jpg)
-```plain text
+
+![](https://assets.leetcode.com/uploads/2021/01/18/pathsumii1.jpg)
+
+```
 Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
 Output: [[5,4,11,2],[5,8,4,5]]
 Explanation: There are two paths whose sum equals targetSum:
@@ -24,30 +31,39 @@ Explanation: There are two paths whose sum equals targetSum:
 5 + 8 + 4 + 5 = 22
 
 ```
+
 **Example 2:**
-![pathsum2.jpg](https://assets.leetcode.com/uploads/2021/01/18/pathsum2.jpg)
-```plain text
+
+![](https://assets.leetcode.com/uploads/2021/01/18/pathsum2.jpg)
+
+```
 Input: root = [1,2,3], targetSum = 5
 Output: []
 
 ```
+
 **Example 3:**
-```plain text
+
+```
 Input: root = [1,2], targetSum = 0
 Output: []
 
 ```
+
 **Constraints:**
+
 - The number of nodes in the tree is in the range `[0, 5000]`.
 - `1000 <= Node.val <= 1000`
 - `1000 <= targetSum <= 1000`
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 
 ```
 
-Time Complexity :
 ```python
 # Definition for a binary tree node.
 # class TreeNode:
@@ -86,13 +102,18 @@ class Solution:
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
 
-### Notes
-___
+---
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[]()
+
+## Related Videos
+
+---
+
+[https://www.notion.so](https://www.notion.so)

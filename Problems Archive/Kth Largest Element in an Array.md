@@ -1,35 +1,49 @@
+# Kth Largest Element in an Array
+
 Problem: 215
 Official Difficulty: medium
-Link: https://leetcode.com/problems/kth-largest-element-in-an-array/description/
-Completed On : 2024-10-19
 Feels Like : easy
-Topic: array, Divide and Conquer, sorting, Heap(Priority Queue), quickselect
 My Understanding: Fully Understand
-Last Review: 2024-10-19
-Days Since Review: 8
-Name: Kth Largest Element in an Array
+Topic: Divide and Conquer, Heap(Priority Queue), array, quickselect, sorting
+Link: https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+Completed On : October 19, 2024
+Last Review: October 19, 2024
+Days Since Review: 134
+Neetcode: Yes
 
-# Kth Largest Element in an Array
-### Problem
-___
+## Problem
+
+---
+
 Given an integer array `nums` and an integer `k`, return *the* `kth` *largest element in the array*.
+
 Note that it is the `kth` largest element in the sorted order, not the `kth` distinct element.
+
 Can you solve it without sorting?
+
 **Example 1:**
-```plain text
+
+```
 Input: nums = [3,2,1,5,6,4], k = 2
 Output: 5
 ```
+
 **Example 2:**
-```plain text
+
+```
 Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
 Output: 4
 ```
+
 **Constraints:**
+
 - `1 <= k <= nums.length <= 105`
 - `104 <= nums[i] <= 104`
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
@@ -42,18 +56,22 @@ class Solution:
         return heapq.nlargest(k+1,heap)[k-1]
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
 
-### Notes
-___
+---
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[]()
+
+## Related Videos
+
+---
+
+[https://www.notion.so](https://www.notion.so)

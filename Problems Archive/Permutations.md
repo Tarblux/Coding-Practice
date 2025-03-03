@@ -1,40 +1,55 @@
+# Permutations
+
 Problem: 42
 Official Difficulty: medium
-Link: https://leetcode.com/problems/permutations/description/
-Completed On : 2024-03-06
 Feels Like : medium
-Topic: array, backtracking
 My Understanding: Mostly Understand
-Last Review: 2024-10-15
-Days Since Review: 5
-Name: Permutations
+Topic: array, backtracking
+Link: https://leetcode.com/problems/permutations/description/
+Completed On : March 6, 2024
+Last Review: October 15, 2024
+Days Since Review: 138
+Neetcode: Yes
 
-# Permutations
-### Problem
-___
+## Problem
+
+---
+
 Given an array `nums` of distinct integers, return *all the possible permutations*. You can return the answer in **any order**.
+
 **Example 1:**
-```plain text
+
+```
 Input: nums = [1,2,3]
 Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 ```
+
 **Example 2:**
-```plain text
+
+```
 Input: nums = [0,1]
 Output: [[0,1],[1,0]]
 ```
+
 **Example 3:**
-```plain text
+
+```
 Input: nums = [1]
 Output: [[1]]
 ```
+
 **Constraints:**
+
 - `1 <= nums.length <= 6`
 - `10 <= nums[i] <= 10`
 - All the integers of `nums` are **unique**.
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 My solution
+
 ```python
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
@@ -55,8 +70,8 @@ class Solution:
         return permutations
 ```
 
-Time Complexity : 
 Neetcode Solution
+
 ```python
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
@@ -78,11 +93,14 @@ class Solution:
         return result
 ```
 
-Time Complexity :
-### Optimal Solutions
-___
+## Optimal Solutions
+
+---
+
 To generate all permutations of a list of numbers, you can use a classic backtracking algorithm. The idea is to build permutations by swapping elements at each position with every other element and then recursively doing the same for the next positions.
+
 Here's how you can implement this in Python:
+
 ```python
 from typing import List
 
@@ -113,17 +131,27 @@ permutations = solution.permute(nums)
 print(permutations)
 
 ```
-#### Explanation:
+
+### Explanation:
+
 - The function `permute` defines a nested helper function `backtrack` which takes one argument `first`. The `first` argument represents the index in `nums` at which to start generating permutations for the current recursive call.
 - The base case for the recursion occurs when `first` equals `n`, meaning the current permutation of `nums` is complete and can be added to the output list.
 - The algorithm generates permutations by iterating through the indices `i` from `first` to `n - 1`. For each `i`, it swaps the element at `first` with the element at `i`, recursively calls `backtrack` with `first + 1` to generate permutations with the element at `i` fixed in the first position, and then swaps back to restore the original order of `nums` for the next iteration.
 - This process generates all possible permutations by ensuring that each number gets to occupy the first position in the list, followed by each subsequent number getting the chance to be in the next position, and so on.
-#### Complexity Analysis:
+
+### Complexity Analysis:
+
 - **Time Complexity**: O(n!), where n is the number of elements in the list. There are n! permutations in total for a list of n elements.
 - **Space Complexity**: O(n), for the recursion call stack. In the worst case, the depth of the recursion tree is n. Additionally, O(n) space is used to store the current permutation.
-### Notes
-___
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[s7AvT7cGdSo](https://youtu.be/s7AvT7cGdSo)
+
+## Related Videos
+
+---
+
+[https://youtu.be/s7AvT7cGdSo](https://youtu.be/s7AvT7cGdSo)

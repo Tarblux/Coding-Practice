@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Problem: 1851
 Official Difficulty: hard
 Link: https://leetcode.com/problems/minimum-interval-to-include-each-query/description/
@@ -17,6 +18,34 @@ You are also given an integer array `queries`. The answer to the `jth` query 
 Return *an array containing the answers to the queries*.
 **Example 1:**
 ```plain text
+=======
+# Minimum Interval to Include Each Query
+
+Problem: 1851
+Official Difficulty: hard
+Feels Like : hard
+My Understanding: Needs Review
+Topic: Heap(Priority Queue), array, binary search, line sweep, sorting
+Link: https://leetcode.com/problems/minimum-interval-to-include-each-query/description/
+Completed On : December 21, 2024
+Last Review: December 21, 2024
+Days Since Review: 71
+Neetcode: Yes
+
+## Problem
+
+---
+
+You are given a 2D integer array `intervals`, where `intervals[i] = [lefti, righti]` describes the `ith` interval starting at `lefti` and ending at `righti` **(inclusive)**. The **size** of an interval is defined as the number of integers it contains, or more formally `righti - lefti + 1`.
+
+You are also given an integer array `queries`. The answer to the `jth` query is the **size of the smallest interval** `i` such that `lefti <= queries[j] <= righti`. If no such interval exists, the answer is `-1`.
+
+Return *an array containing the answers to the queries*.
+
+**Example 1:**
+
+```
+>>>>>>> Stashed changes
 Input: intervals = [[1,4],[2,4],[3,6],[4,4]], queries = [2,3,4,5]
 Output: [3,3,1,4]
 Explanation: The queries are processed as follows:
@@ -26,8 +55,15 @@ Explanation: The queries are processed as follows:
 - Query = 5: The interval [3,6] is the smallest interval containing 5. The answer is 6 - 3 + 1 = 4.
 
 ```
+<<<<<<< Updated upstream
 **Example 2:**
 ```plain text
+=======
+
+**Example 2:**
+
+```
+>>>>>>> Stashed changes
 Input: intervals = [[2,3],[2,5],[1,8],[20,25]], queries = [2,19,5,22]
 Output: [2,-1,4,6]
 Explanation: The queries are processed as follows:
@@ -37,19 +73,36 @@ Explanation: The queries are processed as follows:
 - Query = 22: The interval [20,25] is the smallest interval containing 22. The answer is 25 - 20 + 1 = 6.
 
 ```
+<<<<<<< Updated upstream
 **Constraints:**
+=======
+
+**Constraints:**
+
+>>>>>>> Stashed changes
 - `1 <= intervals.length <= 105`
 - `1 <= queries.length <= 105`
 - `intervals[i].length == 2`
 - `1 <= lefti <= righti <= 107`
 - `1 <= queries[j] <= 107`
+<<<<<<< Updated upstream
 ### My Solutions
 ___
+=======
+
+## My Solutions
+
+---
+
+>>>>>>> Stashed changes
 ```python
 
 ```
 
+<<<<<<< Updated upstream
 Time Complexity :
+=======
+>>>>>>> Stashed changes
 ```python
 class Solution:
     def minInterval(self, intervals: List[List[int]], queries: List[int]) -> List[int]:
@@ -76,6 +129,7 @@ class Solution:
                 
         return result
 
+<<<<<<< Updated upstream
 
 
 
@@ -92,3 +146,22 @@ ___
 ### Related Videos 
 ___
 [5hQ5WWW5awQ](https://youtu.be/5hQ5WWW5awQ)
+=======
+```
+
+## Optimal Solutions
+
+---
+
+## Notes
+
+---
+
+ 
+
+## Related Videos
+
+---
+
+[https://youtu.be/5hQ5WWW5awQ](https://youtu.be/5hQ5WWW5awQ)
+>>>>>>> Stashed changes

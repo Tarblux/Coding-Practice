@@ -1,23 +1,31 @@
+# Sort The Students by their Kth Score
+
 Problem: 2545
 Official Difficulty: medium
-Link: https://leetcode.com/problems/sort-the-students-by-their-kth-score/description/
-Completed On : 2024-11-04
 Feels Like : easy
-Topic: sorting, Matrix
 My Understanding: Fully Understand
-Last Review: 2024-11-04
-Days Since Review: 6
-Name: Sort The Students by their Kth Score
+Topic: Matrix, sorting
+Link: https://leetcode.com/problems/sort-the-students-by-their-kth-score/description/
+Completed On : November 4, 2024
+Last Review: November 4, 2024
+Days Since Review: 118
+Neetcode: No
 
-# Sort The Students by their Kth Score
-### Problem
-___
+## Problem
+
+---
+
 There is a class with `m` students and `n` exams. You are given a **0-indexed** `m x n` integer matrix `score`, where each row represents one student and `score[i][j]` denotes the score the `ith` student got in the `jth` exam. The matrix `score` contains **distinct** integers only.
+
 You are also given an integer `k`. Sort the students (i.e., the rows of the matrix) by their scores in the `kth` (**0-indexed**) exam from the highest to the lowest.
+
 Return *the matrix after sorting it.*
+
 **Example 1:**
-![example1.png](https://assets.leetcode.com/uploads/2022/11/30/example1.png)
-```plain text
+
+![](https://assets.leetcode.com/uploads/2022/11/30/example1.png)
+
+```
 Input: score = [[10,6,9,1],[7,5,11,2],[4,8,3,15]], k = 2
 Output: [[7,5,11,2],[10,6,9,1],[4,8,3,15]]
 Explanation: In the above diagram, S denotes the student, while E denotes the exam.
@@ -26,9 +34,12 @@ Explanation: In the above diagram, S denotes the student, while E denotes the ex
 - The student with index 2 scored 3 in exam 2, which is the lowest score, so they got third place.
 
 ```
+
 **Example 2:**
-![example2.png](https://assets.leetcode.com/uploads/2022/11/30/example2.png)
-```plain text
+
+![](https://assets.leetcode.com/uploads/2022/11/30/example2.png)
+
+```
 Input: score = [[3,4],[5,6]], k = 0
 Output: [[5,6],[3,4]]
 Explanation: In the above diagram, S denotes the student, while E denotes the exam.
@@ -36,15 +47,20 @@ Explanation: In the above diagram, S denotes the student, while E denotes the ex
 - The student with index 0 scored 3 in exam 0, which is the lowest score, so they got second place.
 
 ```
+
 **Constraints:**
+
 - `m == score.length`
 - `n == score[i].length`
 - `1 <= m, n <= 250`
 - `1 <= score[i][j] <= 105`
 - `score` consists of **distinct** integers.
 - `0 <= k < n`
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 class Solution:
     def sortTheStudents(self, score: List[List[int]], k: int) -> List[List[int]]:
@@ -54,18 +70,22 @@ class Solution:
         return score
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
 
-### Notes
-___
+---
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[]()
+
+## Related Videos
+
+---
+
+[https://www.notion.so](https://www.notion.so)

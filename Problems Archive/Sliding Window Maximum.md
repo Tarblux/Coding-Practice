@@ -1,21 +1,33 @@
+# Sliding Window Maximum
+
 Problem: 239
 Official Difficulty: hard
-Link: https://leetcode.com/problems/sliding-window-maximum/description/
-Completed On : 2024-12-14
 Feels Like : Brain Damage
-Topic: array, Queue, sliding window, Heap(Priority Queue), monotonic queue
 My Understanding: Needs Review
+<<<<<<< Updated upstream
 Last Review: 2024-12-14
 Days Since Review: 8
 Name: Sliding Window Maximum
+=======
+Topic: Heap(Priority Queue), Queue, array, monotonic queue, sliding window
+Link: https://leetcode.com/problems/sliding-window-maximum/description/
+Completed On : December 14, 2024
+Last Review: December 14, 2024
+Days Since Review: 78
+Neetcode: Yes
 
-# Sliding Window Maximum
-### Problem
-___
+## Problem
+
+---
+>>>>>>> Stashed changes
+
 You are given an array of integers `nums`, there is a sliding window of size `k` which is moving from the very left of the array to the very right. You can only see the `k` numbers in the window. Each time the sliding window moves right by one position.
+
 Return *the max sliding window*.
+
 **Example 1:**
-```plain text
+
+```
 Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
 Output: [3,3,5,5,6,7]
 Explanation:
@@ -28,18 +40,25 @@ Window position                Max
  1  3  -1  -3 [5  3  6] 76
  1  3  -1  -3  5 [3  6  7]7
 ```
+
 **Example 2:**
-```plain text
+
+```
 Input: nums = [1], k = 1
 Output: [1]
 
 ```
+
 **Constraints:**
+
 - `1 <= nums.length <= 105`
 - `104 <= nums[i] <= 104`
 - `1 <= k <= nums.length`
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
@@ -63,22 +82,26 @@ class Solution:
         return result
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
+
+---
+
 We use a **monotonic deque** approach to solve the sliding window maximum in O(n) time. The idea is to maintain a deque of indices that always represent potential maximum elements for the current window. The deque is kept in decreasing order of values (front holds the largest element):
+
 **Steps:**
+
 1. Iterate over indices `i` in `nums`:
-	- While the deque is not empty and `nums[i]` is greater than or equal to the element at the back of the deque, pop from the back. This ensures that elements that can no longer be a maximum due to the new larger element are removed.
-	- Append `i` to the deque.
-	- If `i` is at least `k-1`, we have our first full window. The front of the deque gives the index of the maximum in the current window. Append `nums[deque[0]]` to the result.
-	- Also, if the front of the deque is out of the current window (index < i-k+1), pop it from the front.
+    - While the deque is not empty and `nums[i]` is greater than or equal to the element at the back of the deque, pop from the back. This ensures that elements that can no longer be a maximum due to the new larger element are removed.
+    - Append `i` to the deque.
+    - If `i` is at least `k-1`, we have our first full window. The front of the deque gives the index of the maximum in the current window. Append `nums[deque[0]]` to the result.
+    - Also, if the front of the deque is out of the current window (index < i-k+1), pop it from the front.
+
 **Code:**
+
 ```python
 from collections import deque
 
@@ -105,9 +128,15 @@ class Solution:
         return res
 
 ```
-### Notes
-___
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[DfljaUwZsOk](https://youtu.be/DfljaUwZsOk)
+
+## Related Videos
+
+---
+
+[https://youtu.be/DfljaUwZsOk](https://youtu.be/DfljaUwZsOk)

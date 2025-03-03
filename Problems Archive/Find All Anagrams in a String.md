@@ -1,30 +1,37 @@
+# Find All Anagrams in a String
+
 Problem: 438
 Official Difficulty: medium
-Link: https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
-Completed On : 2024-12-13
 Feels Like : medium
-Topic: sliding window, hash table
 My Understanding: Mostly Understand, Needs Review
-Last Review: 2024-12-13
-Days Since Review: 2
-Name: Find All Anagrams in a String
+Topic: hash table, sliding window
+Link: https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
+Completed On : December 13, 2024
+Last Review: December 13, 2024
+Days Since Review: 79
+Neetcode: No
 
-# Find All Anagrams in a String
-### Problem
-___
+## Problem
+
+---
+
 Given two strings `s` and `p`, return an array of all the start indices of `p`'s
+
 anagrams in `s`.You may return the answer in**any order**
 
 **Example 1:**
-```plain text
+
+```
 Input: s = "cbaebabacd", p = "abc"
 Output: [0,6]
 Explanation:
 The substring with start index = 0 is "cba", which is an anagram of "abc".
 The substring with start index = 6 is "bac", which is an anagram of "abc".
 ```
+
 **Example 2:**
-```plain text
+
+```
 Input: s = "abab", p = "ab"
 Output: [0,1,2]
 Explanation:
@@ -32,11 +39,16 @@ The substring with start index = 0 is "ab", which is an anagram of "ab".
 The substring with start index = 1 is "ba", which is an anagram of "ab".
 The substring with start index = 2 is "ab", which is an anagram of "ab".
 ```
+
 **Constraints:**
+
 - `1 <= s.length, p.length <= 3 * 104`
 - `s` and `p` consist of lowercase English letters.
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
@@ -64,22 +76,24 @@ class Solution:
 
         return anagrams
 
-
-
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
 
-### Notes
-___
+---
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[]()
+
+## Related Videos
+
+---
+
+[https://www.notion.so](https://www.notion.so)

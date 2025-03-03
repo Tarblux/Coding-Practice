@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Problem: 515
 Official Difficulty: medium
 Link: https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/?envType=daily-question&envId=2024-12-25
@@ -29,6 +30,52 @@ Output: [1,3]
 - `231 <= Node.val <= 231 - 1`
 ### My Solutions
 ___
+=======
+# Find Largest Value in Each Tree Row
+
+Problem: 515
+Official Difficulty: medium
+Feels Like : easy
+My Understanding: Fully Understand
+Topic: Breadth-First Search(BFS), Depth-First Search (DFS), binary tree, tree
+Link: https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/?envType=daily-question&envId=2024-12-25
+Completed On : December 24, 2024
+Last Review: December 24, 2024
+Days Since Review: 68
+Neetcode: No
+
+## Problem
+
+---
+
+Given the `root` of a binary tree, return *an array of the largest value in each row* of the tree **(0-indexed)**.
+
+**Example 1:**
+
+![](https://assets.leetcode.com/uploads/2020/08/21/largest_e1.jpg)
+
+```
+Input: root = [1,3,2,5,3,null,9]
+Output: [1,3,9]
+```
+
+**Example 2:**
+
+```
+Input: root = [1,2,3]
+Output: [1,3]
+```
+
+**Constraints:**
+
+- The number of nodes in the tree will be in the range `[0, 104]`.
+- `231 <= Node.val <= 231 - 1`
+
+## My Solutions
+
+---
+
+>>>>>>> Stashed changes
 ```python
 # Definition for a binary tree node.
 # class TreeNode:
@@ -66,11 +113,15 @@ class Solution:
         return output
 ```
 
+<<<<<<< Updated upstream
 Time Complexity :
+=======
+>>>>>>> Stashed changes
 ```python
 
 ```
 
+<<<<<<< Updated upstream
 Time Complexity : 
 ### Optimal Solutions
 ___
@@ -83,6 +134,28 @@ ___
 3. Add the largest value of each level to the result list.
 ___
 #### Code Implementation (BFS)
+=======
+## Optimal Solutions
+
+---
+
+Here’s how to solve **LeetCode 515: Find Largest Value in Each Tree Row** using a **Breadth-First Search (BFS)** or **Depth-First Search (DFS)** approach:
+
+---
+
+### **Approach 1: BFS (Level Order Traversal)**
+
+### Steps:
+
+1. Perform a level-order traversal of the tree using a queue.
+2. For each level, keep track of the largest value encountered.
+3. Add the largest value of each level to the result list.
+
+---
+
+### Code Implementation (BFS)
+
+>>>>>>> Stashed changes
 ```python
 from collections import deque
 
@@ -110,6 +183,7 @@ class Solution:
         return result
 
 ```
+<<<<<<< Updated upstream
 ___
 #### **Approach 2: DFS**
 #### Steps:
@@ -118,6 +192,23 @@ ___
 6. At each depth, update the largest value seen so far.
 ___
 #### Code Implementation (DFS)
+=======
+
+---
+
+### **Approach 2: DFS**
+
+### Steps:
+
+1. Traverse the tree recursively, keeping track of the current depth.
+2. Use a list `result` where the index represents the depth.
+3. At each depth, update the largest value seen so far.
+
+---
+
+### Code Implementation (DFS)
+
+>>>>>>> Stashed changes
 ```python
 class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
@@ -140,10 +231,21 @@ class Solution:
         return result
 
 ```
+<<<<<<< Updated upstream
 ___
 #### **Example**
 **Input:**
 ```plain text
+=======
+
+---
+
+### **Example**
+
+**Input:**
+
+```
+>>>>>>> Stashed changes
       1
      / \
     3   2
@@ -151,6 +253,7 @@ ___
   5   3   9
 
 ```
+<<<<<<< Updated upstream
 **Execution (BFS):**
 7. Level 0: [1] → max = 1
 8. Level 1: [3, 2] → max = 3
@@ -170,3 +273,37 @@ ___
 ### Related Videos 
 ___
 []()
+=======
+
+**Execution (BFS):**
+
+1. Level 0: [1] → max = 1
+2. Level 1: [3, 2] → max = 3
+3. Level 2: [5, 3, 9] → max = 9
+
+**Output:** `[1, 3, 9]`
+
+---
+
+### **Complexity Analysis**
+
+- **Time Complexity:** O(n)
+    - Every node is visited once.
+- **Space Complexity:** O(n)
+    - BFS: The queue can hold up to the maximum number of nodes at any level.
+    - DFS: The recursion stack can go as deep as the height of the tree.
+
+Both BFS and DFS are efficient for this problem, and the choice depends on personal preference or familiarity.
+
+## Notes
+
+---
+
+ 
+
+## Related Videos
+
+---
+
+[https://www.notion.so](https://www.notion.so)
+>>>>>>> Stashed changes

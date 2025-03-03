@@ -1,36 +1,48 @@
+# Meeting Rooms
+
 Problem: 252
 Official Difficulty: easy
-Link: https://leetcode.com/problems/meeting-rooms/description/?envType=problem-list-v2&envId=sorting
-Completed On : 2024-10-15
 Feels Like : easy breazy
-Topic: array, sorting
 My Understanding: Fully Understand
-Last Review: 2024-10-15
-Days Since Review: 5
-Name: Meeting Rooms
+Topic: array, sorting
+Link: https://leetcode.com/problems/meeting-rooms/description/?envType=problem-list-v2&envId=sorting
+Completed On : October 15, 2024
+Last Review: October 15, 2024
+Days Since Review: 138
+Neetcode: Yes
 
-# Meeting Rooms
-### Problem
-___
+## Problem
+
+---
+
 Given an array of meeting time `intervals` where `intervals[i] = [starti, endi]`, determine if a person could attend all meetings.
+
 **Example 1:**
-```plain text
+
+```
 Input: intervals = [[0,30],[5,10],[15,20]]
 Output: false
 
 ```
+
 **Example 2:**
-```plain text
+
+```
 Input: intervals = [[7,10],[2,4]]
 Output: true
 
 ```
+
 **Constraints:**
+
 - `0 <= intervals.length <= 104`
 - `intervals[i].length == 2`
 - `0 <= starti < endi <= 106`
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 class Solution:
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
@@ -52,15 +64,15 @@ class Solution:
 
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
-```javascript
+## Optimal Solutions
+
+---
+
+```jsx
 class Solution:
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
         intervals.sort()
@@ -69,14 +81,26 @@ class Solution:
                 return False
         return True
 ```
+
 **Complexity Analysis**
+
 - Time complexity : *O*(*n*log*n*).
-The time complexity is dominated by sorting. Once the array has been sorted, only *O*(*n*) time is taken to go through the array and determine if there is any overlap.
+    
+    The time complexity is dominated by sorting. Once the array has been sorted, only *O*(*n*) time is taken to go through the array and determine if there is any overlap.
+    
 - Space complexity : *O*(1).
-Since no additional space is allocated.
-### Notes
-___
+    
+    Since no additional space is allocated.
+    
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[]()
+
+## Related Videos
+
+---
+
+[https://www.notion.so](https://www.notion.so)

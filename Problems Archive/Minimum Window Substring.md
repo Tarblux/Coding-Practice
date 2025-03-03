@@ -1,48 +1,72 @@
+# Minimum Window Substring
+
 Problem: 76
 Official Difficulty: hard
-Link: https://leetcode.com/problems/minimum-window-substring/description/
-Completed On : 2024-12-14
 Feels Like : hard
-Topic: hash table, string, sliding window
 My Understanding: Mostly Understand
+<<<<<<< Updated upstream
 Last Review: 2024-12-14
 Days Since Review: 8
 Name: Minimum Window Substring
+=======
+Topic: hash table, sliding window, string
+Link: https://leetcode.com/problems/minimum-window-substring/description/
+Completed On : December 14, 2024
+Last Review: December 14, 2024
+Days Since Review: 78
+Neetcode: Yes
 
-# Minimum Window Substring
-### Problem
-___
-Given two strings `s` and `t` of lengths `m` and `n` respectively, return *the ****minimum window substring ****of *`s`*such that every character in *`t`
-*(****including duplicates****) is included in the window*
+## Problem
+
+---
+
+Given two strings `s` and `t` of lengths `m` and `n` respectively, return *the **minimum window substring** of* `s`*such that every character in* `t`
+
+*(**including duplicates**) is included in the window*
+>>>>>>> Stashed changes
+
 . If there is no such substring, return *the empty string*
+
 The testcases will be generated such that the answer is **unique**.
+
 **Example 1:**
-```plain text
+
+```
 Input: s = "ADOBECODEBANC", t = "ABC"
 Output: "BANC"
 Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
 ```
+
 **Example 2:**
-```plain text
+
+```
 Input: s = "a", t = "a"
 Output: "a"
 Explanation: The entire string s is the minimum window.
 ```
+
 **Example 3:**
-```plain text
+
+```
 Input: s = "a", t = "aa"
 Output: ""
 Explanation: Both 'a's from t must be included in the window.
 Since the largest window of s only has one 'a', return empty string.
 ```
+
 **Constraints:**
+
 - `m == s.length`
 - `n == t.length`
 - `1 <= m, n <= 105`
 - `s` and `t` consist of uppercase and lowercase English letters.
+
 **Follow up:** Could you find an algorithm that runs in `O(m + n)` time?
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
@@ -88,22 +112,26 @@ class Solution:
         return result     
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
+
+---
+
 This uses a sliding window approach with two pointers and a frequency map to track how many characters from `t` are needed:
+
 1. Build a frequency map `need` for the characters in `t`.
 2. Use two pointers `left` and `right` to represent the current window in `s`.
 3. Expand `right` and decrement counts in `need` when you encounter a character. If a needed character's count drops to zero or below, it means we've covered that character's requirement.
 4. Once all characters of `t` are covered by the window (`formed == required`), attempt to shrink the window from the left to find a smaller valid window.
 5. Keep track of the minimum valid window as you go along.
+
 This runs in O(n) time since each character is processed at most twice.
+
 **Code:**
+
 ```python
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
@@ -145,9 +173,15 @@ class Solution:
         return "" if min_len == float('inf') else s[min_start:min_start+min_len]
 
 ```
-### Notes
-___
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[jSto0O4AJbM](https://youtu.be/jSto0O4AJbM)
+
+## Related Videos
+
+---
+
+[https://youtu.be/jSto0O4AJbM](https://youtu.be/jSto0O4AJbM)

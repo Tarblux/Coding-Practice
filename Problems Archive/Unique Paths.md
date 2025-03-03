@@ -3,12 +3,13 @@
 Problem: 62
 Official Difficulty: medium
 Feels Like : medium
+My Understanding: Mostly Understand, Needs Review
 Topic: Math, combinatronics, dynamic programming
 Link: https://leetcode.com/problems/unique-paths/description/
 Completed On : January 30, 2024
-My Understanding: Needs Review
-Last Review: January 30, 2024
-Days Since Review: 11
+Last Review: February 17, 2025
+Days Since Review: 13
+Neetcode: Yes
 
 ## Problem
 
@@ -22,7 +23,7 @@ The test cases are generated so that the answer will be less than or equal to `2
 
 **Example 1:**
 
-![https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png](https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png)
+![](https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png)
 
 ```
 Input: m = 3, n = 7
@@ -73,7 +74,37 @@ class Solution:
 ```
 
 ```python
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
 
+        gridski = [[0 for _ in range(n)] for _ in range(m)]
+        gridski[0] = [1 for _ in range(n)]
+
+        for grid in gridski[1:] :
+            grid[0] = 1
+
+        for i in range(1,m):
+            for j in range(1,n):
+
+                gridski[i][j] = gridski[i][j-1] + gridski[i-1][j]
+
+        return gridski[m-1][n-1]
+```
+
+```python
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+
+        dp = [[1 for _ in range(n)] for _ in range(m)]
+
+        for row in range(1,m):
+            for col in range(1,n):
+
+                above = dp[row-1][col]
+                left = dp[row][col-1]
+                dp[row][col] =  above + left
+
+        return dp[m-1][n-1] 
 ```
 
 ## Optimal Solutions

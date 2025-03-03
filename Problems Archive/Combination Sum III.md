@@ -1,31 +1,40 @@
+# Combination Sum III
+
 Problem: 216
 Official Difficulty: medium
-Link: https://leetcode.com/problems/combination-sum-iii/description/
-Completed On : 2024-12-03
 Feels Like : easy
-Topic: array, backtracking
 My Understanding: Fully Understand
-Last Review: 2024-12-03
-Days Since Review: 5
-Name: Combination Sum III
+Topic: array, backtracking
+Link: https://leetcode.com/problems/combination-sum-iii/description/
+Completed On : December 3, 2024
+Last Review: December 3, 2024
+Days Since Review: 89
+Neetcode: No
 
-# Combination Sum III
-### Problem
-___
+## Problem
+
+---
+
 Find all valid combinations of `k` numbers that sum up to `n` such that the following conditions are true:
+
 - Only numbers `1` through `9` are used.
 - Each number is used **at most once**.
+
 Return *a list of all possible valid combinations*. The list must not contain the same combination twice, and the combinations may be returned in any order.
+
 **Example 1:**
-```plain text
+
+```
 Input: k = 3, n = 7
 Output: [[1,2,4]]
 Explanation:
 1 + 2 + 4 = 7
 There are no other valid combinations.
 ```
+
 **Example 2:**
-```plain text
+
+```
 Input: k = 3, n = 9
 Output: [[1,2,6],[1,3,5],[2,3,4]]
 Explanation:
@@ -35,19 +44,26 @@ Explanation:
 There are no other valid combinations.
 
 ```
+
 **Example 3:**
-```plain text
+
+```
 Input: k = 4, n = 1
 Output: []
 Explanation: There are no valid combinations.
 Using 4 different numbers in the range [1,9], the smallest sum we can get is 1+2+3+4 = 10 and since 10 > 1, there are no valid combination.
 
 ```
+
 **Constraints:**
+
 - `2 <= k <= 9`
 - `1 <= n <= 60`
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 class Solution:
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
@@ -72,48 +88,56 @@ class Solution:
         return combinations
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
+
+---
+
 To solve **Combination Sum III**, we aim to find all unique combinations of `k` distinct numbers from `1` to `9` that sum up to `n`. Given the constraints, the most efficient and straightforward approach is to use **backtracking** with **pruning** to explore potential combinations.
-#### **Key Concepts:**
+
+### **Key Concepts:**
+
 1. **Backtracking:**
-	- A recursive approach to explore all possible combinations.
-	- Builds combinations incrementally and abandons a path (backtracks) as soon as it determines that the path cannot possibly lead to a valid solution.
+    - A recursive approach to explore all possible combinations.
+    - Builds combinations incrementally and abandons a path (backtracks) as soon as it determines that the path cannot possibly lead to a valid solution.
 2. **Pruning:**
-	- An optimization technique to reduce the search space by eliminating paths that cannot yield valid combinations.
-	- In this problem, we can prune the search when:
-		- The current sum exceeds `n`.
-		- The number of elements in the current combination exceeds `k`.
-		- The remaining numbers are insufficient to reach `k` elements.
-#### **Algorithm Steps:**
-3. **Initialize Variables:**
-	- Create an empty list `result` to store all valid combinations.
-	- Define a helper function `backtrack(start, path, current_sum)` where:
-		- `start`: The starting number for the current recursion to avoid duplicates.
-		- `path`: The current combination being built.
-		- `current_sum`: The sum of numbers in the current `path`.
-4. **Backtracking Function (**`**backtrack**`**):**
-	- **Base Cases:**
-		- If the length of `path` is `k` and `current_sum` is equal to `n`, append a copy of `path` to `result`.
-		- If the length of `path` exceeds `k` or `current_sum` exceeds `n`, terminate the current path (prune).
-	- **Recursive Exploration:**
-		- Iterate through numbers from `start` to `9`:
-			- Append the current number to `path`.
-			- Recursively call `backtrack` with updated `start`, `path`, and `current_sum`.
-			- Remove the last number from `path` to backtrack.
-5. **Invoke Backtracking:**
-	- Start the backtracking process with `start = 1`, an empty `path`, and `current_sum = 0`.
-6. **Return the Result:**
-	- After exploring all paths, return the `result` list containing all valid combinations.
-___
-### Code Implementation
-#### **Backtracking Approach (Optimal Solution)**
+    - An optimization technique to reduce the search space by eliminating paths that cannot yield valid combinations.
+    - In this problem, we can prune the search when:
+        - The current sum exceeds `n`.
+        - The number of elements in the current combination exceeds `k`.
+        - The remaining numbers are insufficient to reach `k` elements.
+
+### **Algorithm Steps:**
+
+1. **Initialize Variables:**
+    - Create an empty list `result` to store all valid combinations.
+    - Define a helper function `backtrack(start, path, current_sum)` where:
+        - `start`: The starting number for the current recursion to avoid duplicates.
+        - `path`: The current combination being built.
+        - `current_sum`: The sum of numbers in the current `path`.
+2. **Backtracking Function (`backtrack`):**
+    - **Base Cases:**
+        - If the length of `path` is `k` and `current_sum` is equal to `n`, append a copy of `path` to `result`.
+        - If the length of `path` exceeds `k` or `current_sum` exceeds `n`, terminate the current path (prune).
+    - **Recursive Exploration:**
+        - Iterate through numbers from `start` to `9`:
+            - Append the current number to `path`.
+            - Recursively call `backtrack` with updated `start`, `path`, and `current_sum`.
+            - Remove the last number from `path` to backtrack.
+3. **Invoke Backtracking:**
+    - Start the backtracking process with `start = 1`, an empty `path`, and `current_sum = 0`.
+4. **Return the Result:**
+    - After exploring all paths, return the `result` list containing all valid combinations.
+
+---
+
+## Code Implementation
+
+### **Backtracking Approach (Optimal Solution)**
+
 ```python
 class Solution:
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
@@ -143,122 +167,160 @@ class Solution:
         return result
 
 ```
-___
-### Detailed Explanation
-#### **Step-by-Step Process:**
-7. **Initialization:**
-	- `result = []`: To store all valid combinations.
-	- The `backtrack` function is defined to explore combinations recursively.
-8. **Backtracking Function (**`**backtrack**`**):**
-	- **Parameters:**
-		- `start`: The next number to consider (to ensure numbers are used only once and combinations are unique).
-		- `path`: The current combination being built.
-		- `current_sum`: The sum of the numbers in `path`.
-	- **Base Cases:**
-		- **Combination Complete:**
-			- If `len(path) == k` and `current_sum == n`, a valid combination is found.
-			- Append a copy of `path` to `result`.
-			- Return to explore other possibilities.
-		- **Invalid Combination:**
-			- If `len(path) > k` or `current_sum > n`, terminate this path as it cannot lead to a valid combination.
-	- **Recursive Exploration:**
-		- Iterate through numbers from `start` to `9`:
-			- **Pruning:**
-				- If adding the current number `num` to `current_sum` exceeds `n`, break the loop. Since numbers are in ascending order, further numbers will only increase the sum.
-			- **Choose the Current Number:**
-				- Append `num` to `path`.
-				- Recursively call `backtrack` with updated parameters:
-					- `start = num + 1`: To ensure the next number is greater than the current `num`.
-					- `path`: Updated with `num`.
-					- `current_sum + num`: Updated sum.
-			- **Backtrack:**
-				- Remove the last number from `path` to explore other combinations.
-9. **Starting the Backtracking Process:**
-	- Call `backtrack(1, [], 0)` to begin with the first number (`1`), an empty path, and a sum of `0`.
-10. **Completion:**
-	- After all recursive calls complete, `result` contains all valid combinations.
-	- Return `result`.
-#### **Why This Works:**
+
+---
+
+## Detailed Explanation
+
+### **Step-by-Step Process:**
+
+1. **Initialization:**
+    - `result = []`: To store all valid combinations.
+    - The `backtrack` function is defined to explore combinations recursively.
+2. **Backtracking Function (`backtrack`):**
+    - **Parameters:**
+        - `start`: The next number to consider (to ensure numbers are used only once and combinations are unique).
+        - `path`: The current combination being built.
+        - `current_sum`: The sum of the numbers in `path`.
+    - **Base Cases:**
+        - **Combination Complete:**
+            - If `len(path) == k` and `current_sum == n`, a valid combination is found.
+            - Append a copy of `path` to `result`.
+            - Return to explore other possibilities.
+        - **Invalid Combination:**
+            - If `len(path) > k` or `current_sum > n`, terminate this path as it cannot lead to a valid combination.
+    - **Recursive Exploration:**
+        - Iterate through numbers from `start` to `9`:
+            - **Pruning:**
+                - If adding the current number `num` to `current_sum` exceeds `n`, break the loop. Since numbers are in ascending order, further numbers will only increase the sum.
+            - **Choose the Current Number:**
+                - Append `num` to `path`.
+                - Recursively call `backtrack` with updated parameters:
+                    - `start = num + 1`: To ensure the next number is greater than the current `num`.
+                    - `path`: Updated with `num`.
+                    - `current_sum + num`: Updated sum.
+            - **Backtrack:**
+                - Remove the last number from `path` to explore other combinations.
+3. **Starting the Backtracking Process:**
+    - Call `backtrack(1, [], 0)` to begin with the first number (`1`), an empty path, and a sum of `0`.
+4. **Completion:**
+    - After all recursive calls complete, `result` contains all valid combinations.
+    - Return `result`.
+
+### **Why This Works:**
+
 - **Uniqueness:** By always choosing the next number greater than the current (`num + 1`), we ensure that combinations are unique and numbers are not reused.
 - **Pruning:** Early termination of paths that exceed the target sum (`n`) or the required number of elements (`k`) optimizes the algorithm, preventing unnecessary computations.
 - **Efficiency:** The approach explores all potential combinations without redundancy, ensuring optimal performance within the given constraints.
-___
-### Time and Space Complexity Analysis
-#### **Time Complexity:** O(2^9) = O(512) → Considered **Constant Time** for this problem
+
+---
+
+## Time and Space Complexity Analysis
+
+### **Time Complexity:** O(2^9) = O(512) → Considered **Constant Time** for this problem
+
 - **Explanation:**
-	- The problem involves choosing up to `k` numbers from `9` possible candidates (`1` to `9`).
-	- The number of possible combinations is limited (e.g., C(9,3) = 84, C(9,4) = 126).
-	- Therefore, the algorithm runs efficiently within the problem's constraints.
-#### **Space Complexity:** O(k)
+    - The problem involves choosing up to `k` numbers from `9` possible candidates (`1` to `9`).
+    - The number of possible combinations is limited (e.g., C(9,3) = 84, C(9,4) = 126).
+    - Therefore, the algorithm runs efficiently within the problem's constraints.
+
+### **Space Complexity:** O(k)
+
 - **Explanation:**
-	- The space used by the recursion stack is proportional to `k` (the depth of the recursion).
-	- The `result` list stores all valid combinations, but since the number of combinations is limited, this does not significantly affect space complexity.
-	- Overall, the space complexity is linear with respect to `k`.
-___
-### Example Walkthrough
-#### **Example 1:**
+    - The space used by the recursion stack is proportional to `k` (the depth of the recursion).
+    - The `result` list stores all valid combinations, but since the number of combinations is limited, this does not significantly affect space complexity.
+    - Overall, the space complexity is linear with respect to `k`.
+
+---
+
+## Example Walkthrough
+
+### **Example 1:**
+
 - **Input:**
-```plain text
-k = 3, n = 7
-
-```
+    
+    ```
+    k = 3, n = 7
+    
+    ```
+    
 - **Process:**
-	- **Possible Combinations:**
-		- `[1, 2, 4]` → 1 + 2 + 4 = 7
-		- `[1, 3, 3]` → Invalid (duplicate number)
-		- `[2, 2, 3]` → Invalid (duplicate number)
-	- **Valid Combination:** `[1, 2, 4]`
+    - **Possible Combinations:**
+        - `[1, 2, 4]` → 1 + 2 + 4 = 7
+        - `[1, 3, 3]` → Invalid (duplicate number)
+        - `[2, 2, 3]` → Invalid (duplicate number)
+    - **Valid Combination:** `[1, 2, 4]`
 - **Output:**
-```plain text
-[[1, 2, 4]]
+    
+    ```
+    [[1, 2, 4]]
+    
+    ```
+    
 
-```
-#### **Example 2:**
+### **Example 2:**
+
 - **Input:**
-```plain text
-k = 3, n = 9
-
-```
+    
+    ```
+    k = 3, n = 9
+    
+    ```
+    
 - **Process:**
-	- **Possible Combinations:**
-		- `[1, 2, 6]` → 1 + 2 + 6 = 9
-		- `[1, 3, 5]` → 1 + 3 + 5 = 9
-		- `[2, 3, 4]` → 2 + 3 + 4 = 9
-	- **Valid Combinations:** `[1, 2, 6]`, `[1, 3, 5]`, `[2, 3, 4]`
+    - **Possible Combinations:**
+        - `[1, 2, 6]` → 1 + 2 + 6 = 9
+        - `[1, 3, 5]` → 1 + 3 + 5 = 9
+        - `[2, 3, 4]` → 2 + 3 + 4 = 9
+    - **Valid Combinations:** `[1, 2, 6]`, `[1, 3, 5]`, `[2, 3, 4]`
 - **Output:**
-```plain text
-[[1, 2, 6], [1, 3, 5], [2, 3, 4]]
+    
+    ```
+    [[1, 2, 6], [1, 3, 5], [2, 3, 4]]
+    
+    ```
+    
 
-```
-#### **Example 3:**
+### **Example 3:**
+
 - **Input:**
-```plain text
-k = 4, n = 1
-
-```
+    
+    ```
+    k = 4, n = 1
+    
+    ```
+    
 - **Process:**
-	- **Possible Combinations:**
-		- No combination of `4` distinct numbers from `1` to `9` can sum up to `1`.
-	- **Valid Combinations:** None
+    - **Possible Combinations:**
+        - No combination of `4` distinct numbers from `1` to `9` can sum up to `1`.
+    - **Valid Combinations:** None
 - **Output:**
-```plain text
-[]
+    
+    ```
+    []
+    
+    ```
+    
 
-```
-___
-### Edge Cases to Consider
-11. **Minimum Values:**
-	- `k = 2`, `n = 3`: The smallest valid combination is `[1, 2]`.
-12. **No Valid Combination:**
-	- `k = 4`, `n = 1`: Impossible to form a combination.
-13. **Maximum Values:**
-	- `k = 9`, `n = 45`: The only valid combination is `[1, 2, 3, 4, 5, 6, 7, 8, 9]`.
-14. **Multiple Combinations:**
-	- Ensure that all valid unique combinations are captured without duplicates.
-15. **Single Combination:**
-	- When only one combination satisfies the conditions, e.g., `k = 1`, `n = 5` → `[5]`.
-___
-### Test Cases
+---
+
+## Edge Cases to Consider
+
+1. **Minimum Values:**
+    - `k = 2`, `n = 3`: The smallest valid combination is `[1, 2]`.
+2. **No Valid Combination:**
+    - `k = 4`, `n = 1`: Impossible to form a combination.
+3. **Maximum Values:**
+    - `k = 9`, `n = 45`: The only valid combination is `[1, 2, 3, 4, 5, 6, 7, 8, 9]`.
+4. **Multiple Combinations:**
+    - Ensure that all valid unique combinations are captured without duplicates.
+5. **Single Combination:**
+    - When only one combination satisfies the conditions, e.g., `k = 1`, `n = 5` → `[5]`.
+
+---
+
+## Test Cases
+
 ```python
 # Test Case 1: Single Valid Combination
 k = 3
@@ -306,17 +368,29 @@ n = 17
 assert Solution().combinationSum3(k, n) == [[8,9]]
 
 ```
-___
-### Conclusion
+
+---
+
+## Conclusion
+
 The **backtracking approach** is the most efficient and intuitive method to solve the **Combination Sum III** problem. By systematically exploring potential combinations and utilizing pruning to eliminate invalid paths, we can generate all unique combinations of `k` numbers from `1` to `9` that sum up to `n` with optimal performance.
-#### **Key Takeaways:**
+
+### **Key Takeaways:**
+
 - **Backtracking:** A powerful technique for exploring all possible combinations or permutations, especially when constraints are present.
 - **Pruning:** Essential for optimizing backtracking by eliminating paths that cannot lead to valid solutions, thereby reducing computational overhead.
 - **Constraints Awareness:** Understanding the problem's constraints (e.g., numbers from `1` to `9`, `k <= 9`) allows for more targeted and efficient algorithm design.
+
 This solution effectively balances simplicity and efficiency, making it suitable for both small and large inputs within the given problem constraints.
-### Notes
-___
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[qnLeadJaM_Q](https://youtu.be/qnLeadJaM_Q?si=N9OuB8At34Vww7cT)
+
+## Related Videos
+
+---
+
+[https://youtu.be/qnLeadJaM_Q?si=N9OuB8At34Vww7cT](https://youtu.be/qnLeadJaM_Q?si=N9OuB8At34Vww7cT)

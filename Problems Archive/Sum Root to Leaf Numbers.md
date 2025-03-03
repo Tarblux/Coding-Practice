@@ -1,25 +1,35 @@
+# Sum Root to Leaf Numbers
+
 Problem: 129
 Official Difficulty: medium
-Link: https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
-Completed On : 2024-12-05
 Feels Like : easy
-Topic: tree, Depth-First Search (DFS), binary tree
 My Understanding: Fully Understand
-Last Review: 2024-12-05
-Days Since Review: 3
-Name: Sum Root to Leaf Numbers
+Topic: Depth-First Search (DFS), binary tree, tree
+Link: https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
+Completed On : December 5, 2024
+Last Review: December 5, 2024
+Days Since Review: 87
+Neetcode: No
 
-# Sum Root to Leaf Numbers
-### Problem
-___
+## Problem
+
+---
+
 You are given the `root` of a binary tree containing digits from `0` to `9` only.
+
 Each root-to-leaf path in the tree represents a number.
+
 - For example, the root-to-leaf path `1 -> 2 -> 3` represents the number `123`.
+
 Return *the total sum of all root-to-leaf numbers*. Test cases are generated so that the answer will fit in a **32-bit** integer.
+
 A **leaf** node is a node with no children.
+
 **Example 1:**
-![num1tree.jpg](https://assets.leetcode.com/uploads/2021/02/19/num1tree.jpg)
-```plain text
+
+![](https://assets.leetcode.com/uploads/2021/02/19/num1tree.jpg)
+
+```
 Input: root = [1,2,3]
 Output: 25
 Explanation:
@@ -28,9 +38,12 @@ The root-to-leaf path1->3 represents the number13.
 Therefore, sum = 12 + 13 =25.
 
 ```
+
 **Example 2:**
-![num2tree.jpg](https://assets.leetcode.com/uploads/2021/02/19/num2tree.jpg)
-```plain text
+
+![](https://assets.leetcode.com/uploads/2021/02/19/num2tree.jpg)
+
+```
 Input: root = [4,9,0,5,1]
 Output: 1026
 Explanation:
@@ -40,12 +53,17 @@ The root-to-leaf path4->0 represents the number 40.
 Therefore, sum = 495 + 491 + 40 =1026.
 
 ```
+
 **Constraints:**
+
 - The number of nodes in the tree is in the range `[1, 1000]`.
 - `0 <= Node.val <= 9`
 - The depth of the tree will not exceed `10`.
-### My Solutions
-___
+
+## My Solutions
+
+---
+
 ```python
 # Definition for a binary tree node.
 # class TreeNode:
@@ -74,18 +92,22 @@ class Solution:
         
 ```
 
-Time Complexity :
 ```python
 
 ```
 
-Time Complexity : 
-### Optimal Solutions
-___
+## Optimal Solutions
 
-### Notes
-___
+---
+
+## Notes
+
+---
+
  
-### Related Videos 
-___
-[]()
+
+## Related Videos
+
+---
+
+[https://www.notion.so](https://www.notion.so)

@@ -1,28 +1,29 @@
-# Binary Tree Level Order Traversal
+# Binary Tree Level Order Traversal II
 
-Problem: 102
+Problem: 107
 Official Difficulty: medium
-Feels Like : medium
-Topic: Breadth-First Search(BFS), tree
-Link: https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/
-Completed On : January 17, 2024
-My Understanding: Mostly Understand
-Last Review: January 17, 2024
-Days Since Review: 24
+Feels Like : easy
+My Understanding: Fully Understand
+Topic: Breadth-First Search(BFS), binary tree, tree
+Link: https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+Completed On : November 8, 2024
+Last Review: November 8, 2024
+Days Since Review: 114
+Neetcode: No
 
 ## Problem
 
 ---
 
-Given the `root` of a binary tree, return *the level order traversal of its nodes' values*. (i.e., from left to right, level by level).
+Given the `root` of a binary tree, return *the bottom-up level order traversal of its nodes' values*. (i.e., from left to right, level by level from leaf to root).
 
 **Example 1:**
 
-![https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg](https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg)
+![](https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg)
 
 ```
 Input: root = [3,9,20,null,null,15,7]
-Output: [[3],[9,20],[15,7]]
+Output: [[15,7],[9,20],[3]]
 ```
 
 **Example 2:**
@@ -41,7 +42,7 @@ Output: []
 
 **Constraints:**
 
-- The number of nodes in the tree is in the range `[0, 2000]`.
+- The number of nodes in the tree is in the range `[0, 2000]`.
 - `1000 <= Node.val <= 1000`
 
 ## My Solutions
@@ -56,41 +57,35 @@ Output: []
 #         self.left = left
 #         self.right = right
 class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        
-        dict = {}
-        
-        if not root : 
-            
+    def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
+
+        if not root:
             return []
-       
-        def travis(node,level,dict) : 
+
+        queue = deque([root])
+        order = []
+
+        while queue:
+
+            cur_level = []
+
+            for node in range(len(queue)):
+
+                cur_node = queue.popleft()
+
+                if cur_node.left:
+                    queue.append(cur_node.left)
+
+                if cur_node.right:
+                    queue.append(cur_node.right)
+
+                cur_level.append(cur_node.val)
             
-            if not node : 
-                
-                return
-            
-            if level not in dict : 
-                
-                dict[level] = []
-                
-            dict[level].append(node.val)
-            
-            travis(node.left,level + 1 , dict)
+            order.append(cur_level)
+
+        return order[::-1]
+
         
-            travis(node.right,level + 1 , dict)
-        
-            return dict
-        
-        output_dict = travis(root,0,dict)
-        
-        output = []
-        
-        for level in output_dict : 
-            
-            output.append(output_dict[level])
-            
-        return output
 ```
 
 ```python
@@ -101,72 +96,205 @@ class Solution:
 
 ---
 
-### Problem Statement
+To solve **LeetCode Problem 107: Binary Tree Level Order Traversal II**, the most efficient algorithms involve traversing the binary tree while collecting nodes level by level and then reversing the order of levels to get the bottom-up traversal. Below are the optimal methods along with their time and space complexities.
 
-Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+---
 
-### Solution Approach: Using Queue
+### **1. Breadth-First Search (BFS) with Level Tracking**
 
-The most efficient way to perform level order traversal is by using a queue (FIFO data structure). You start by enqueuing the root and then process nodes level by level, enqueuing their child nodes as you go.
+**Algorithm Steps:**
 
-### Python Implementation
+1. **Initialize a Queue:**
+    - Use a queue to perform level-order traversal (BFS).
+    - Start by adding the root node to the queue.
+2. **Traverse the Tree Level by Level:**
+    - While the queue is not empty:
+        - Determine the number of nodes at the current level (`level_size`).
+        - Initialize an empty list `level_nodes` to store nodes at the current level.
+        - For each node in the current level:
+            - Dequeue a node from the queue.
+            - Add its value to `level_nodes`.
+            - Enqueue its left and right children if they exist.
+        - **Append** `level_nodes` to the result list.
+3. **Reverse the Result List:**
+    - After traversing all levels, reverse the result list to get the bottom-up level order.
 
-Assuming you have a TreeNode class defined as follows:
-
-```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-```
-
-Here's an implementation using a queue:
+**Code Example:**
 
 ```python
 from collections import deque
 
-class Solution:
-    def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        if not root:
-            return []
+def levelOrderBottom(root):
+    if not root:
+        return []
 
-        result = []
-        queue = deque([root])
+    result = []
+    queue = deque([root])
 
-        while queue:
-            level_size = len(queue)
-            level = []
+    while queue:
+        level_size = len(queue)
+        level_nodes = []
 
-            for _ in range(level_size):
-                node = queue.popleft()
-                level.append(node.val)
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
+        for _ in range(level_size):
+            node = queue.popleft()
+            level_nodes.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
 
-            result.append(level)
+        result.append(level_nodes)
 
-        return result
+    # Reverse the result to get bottom-up order
+    return result[::-1]
 
 ```
 
-### Explanation
+**Time Complexity:** O(N)
 
-- Initialize a queue and add the root to it.
-- While the queue is not empty, process each level of the tree:
-    - Determine the number of nodes at the current level (`level_size`).
-    - For each node at this level, remove it from the queue, add its value to the current level's list, and add its children to the queue.
-- After processing all nodes at the current level, add the level's list to the result.
-- Continue until the queue is empty, indicating that all levels have been processed.
+- **Explanation:**
+    - Each node is visited exactly once during the traversal.
+    - Reversing the list takes O(N) time.
+    - Overall time complexity is linear with respect to the number of nodes.
 
-### Complexity Analysis
+**Space Complexity:** O(N)
 
-- **Time Complexity**: O(n), where n is the number of nodes in the tree. Each node is visited exactly once.
-- **Space Complexity**: O(n), for the queue. In the worst-case scenario (a complete binary tree), the queue can contain all nodes of the last level, which is roughly n/2 nodes.
+- **Explanation:**
+    - The queue can hold up to N nodes in the worst case (e.g., a complete binary tree).
+    - The result list stores all node values.
+
+---
+
+### **2. Depth-First Search (DFS) with Depth Tracking**
+
+**Algorithm Steps:**
+
+1. **Initialize Result List:**
+    - Use a list `result` to store nodes at each level.
+2. **Define Recursive DFS Function:**
+    - The function `dfs(node, depth)` performs a preorder traversal while tracking the depth.
+3. **Recursive Traversal:**
+    - If the current node is `None`, return.
+    - **If** `depth` equals the length of `result`:
+        - **Insert** a new list at the beginning of `result` to represent a new level.
+    - **Append** the node's value to the list at index `(depth + 1)`:
+        - This ensures that the bottom level is at index 0.
+    - Recursively call `dfs` on the left and right children, incrementing `depth` by 1.
+
+**Code Example:**
+
+```python
+def levelOrderBottom(root):
+    result = []
+
+    def dfs(node, depth):
+        if not node:
+            return
+        if depth == len(result):
+            # Insert at the beginning to build from bottom up
+            result.insert(0, [])
+        # Add the node's value to the corresponding level
+        result[-(depth + 1)].append(node.val)
+        dfs(node.left, depth + 1)
+        dfs(node.right, depth + 1)
+
+    dfs(root, 0)
+    return result
+
+```
+
+**Time Complexity:** O(N)
+
+- **Explanation:**
+    - Each node is visited exactly once during the traversal.
+
+**Space Complexity:** O(N)
+
+- **Explanation:**
+    - The recursion stack can go up to the height of the tree (O(N) in the worst case).
+    - The result list stores all node values.
+
+---
+
+### **3. BFS without Reversing the Result**
+
+**Algorithm Steps:**
+
+1. **Initialize a Queue and a Deque:**
+    - Use a queue for BFS traversal.
+    - Use a deque (double-ended queue) `result` to append levels to the left.
+2. **Traverse the Tree Level by Level:**
+    - Similar to the BFS approach, but instead of appending `level_nodes` to the end of the result list, append it to the left of the deque.
+
+**Code Example:**
+
+```python
+from collections import deque
+
+def levelOrderBottom(root):
+    if not root:
+        return []
+
+    result = deque()
+    queue = deque([root])
+
+    while queue:
+        level_size = len(queue)
+        level_nodes = []
+        for _ in range(level_size):
+            node = queue.popleft()
+            level_nodes.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        # Append to the left to avoid reversing at the end
+        result.appendleft(level_nodes)
+
+    return list(result)
+
+```
+
+**Time Complexity:** O(N)
+
+- **Explanation:**
+    - Similar to the BFS approach, but avoids the reversing step.
+
+**Space Complexity:** O(N)
+
+- **Explanation:**
+    - Uses a deque for the result, but overall space usage remains O(N).
+
+---
+
+### **Comparison and Recommendation**
+
+- **BFS Approach:**
+    - **Pros:**
+        - Simple to implement.
+        - Efficient for level order traversal.
+    - **Cons:**
+        - Requires reversing the result at the end (unless using a deque).
+- **DFS Approach:**
+    - **Pros:**
+        - No need to reverse the result.
+        - May be more intuitive for some recursive solutions.
+    - **Cons:**
+        - Requires careful index management.
+
+**Recommendation:**
+
+- The **BFS approach** is generally preferred for level order traversal problems due to its simplicity and direct mapping to levels.
+- Using a **deque** to append levels to the left (Method 3) can optimize the BFS approach by avoiding the need to reverse the result list.
+
+---
+
+### **Summary**
+
+- **Time Complexity for All Methods:** O(N)
+- **Space Complexity for All Methods:** O(N)
+
+All methods efficiently traverse the binary tree and collect the nodes in bottom-up level order. The choice between BFS and DFS depends on personal preference and specific use cases. BFS is typically more straightforward for level-based traversals.
 
 ## Notes
 
@@ -178,4 +306,4 @@ class Solution:
 
 ---
 
-[https://www.youtube.com/watch?v=6ZnyEApgFYg&pp=ygUhQmluYXJ5IFRyZWUgTGV2ZWwgT3JkZXIgVHJhdmVyc2Fs](https://www.youtube.com/watch?v=6ZnyEApgFYg&pp=ygUhQmluYXJ5IFRyZWUgTGV2ZWwgT3JkZXIgVHJhdmVyc2Fs)
+[https://www.notion.so](https://www.notion.so)
