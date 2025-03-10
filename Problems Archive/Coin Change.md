@@ -3,12 +3,13 @@
 Problem: 322
 Official Difficulty: medium
 Feels Like : hard
+My Understanding: Mostly Understand
 Topic: Breadth-First Search(BFS), array, dynamic programming
 Link: https://leetcode.com/problems/coin-change/description/
 Completed On : January 21, 2024
-My Understanding: I Have No Idea
-Last Review: January 21, 2024
-Days Since Review: 20
+Last Review: January 28, 2025
+Days Since Review: 33
+Neetcode: Yes
 
 ## Problem
 
@@ -53,7 +54,48 @@ Output: 0
 ---
 
 ```python
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
 
+        if amount == 0:
+            return 0
+
+        memo = {}
+
+        def topdown(n):
+
+            if n in memo:
+                return memo[n]
+
+            if n == 0:
+                return 0
+            elif n < 0:
+                return -1
+
+            fewest = float('inf')
+
+            for coin in coins:
+
+                path = topdown(n-coin)
+                if path != -1:
+                    fewest = min(fewest,path+1)
+
+            memo[n] = fewest if fewest != float('inf') else -1
+
+            return memo[n]
+
+        return topdown(amount)
+
+            
+
+            
+
+            
+
+            
+        
+
+        
 ```
 
 ```python
