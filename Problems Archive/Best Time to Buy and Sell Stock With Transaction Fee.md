@@ -7,8 +7,9 @@ My Understanding: Mostly Understand
 Topic: array, dynamic programming, greedy
 Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/
 Completed On : March 1, 2024
-Last Review: March 5, 2024
-Days Since Review: 56
+Last Review: March 8, 2025
+Days Since Review: 1
+Neetcode: No
 
 ## Problem
 
@@ -73,7 +74,31 @@ class Solution:
 ```
 
 ```python
+class Solution:
+    def maxProfit(self, prices: List[int], fee: int) -> int:
 
+        n = len(prices) # days (1-indexed)
+
+        if n < 2:
+            return 0
+
+        dp = [[0,0]for i in range(n+1)]
+
+        dp[0][0] = 0
+        dp[0][1] = float('inf')
+
+        dp[1][0] = 0
+        dp[1][1] = - prices[0]
+
+        dp[2][0] = max(dp[1][0],dp[1][1] + prices[1] - fee)
+        dp[2][1] = max(dp[1][1],dp[1][0] - prices[1])
+
+        for i in range(3,n+1):
+
+            dp[i][0] = max(dp[i-1][0] , dp[i-1][1] + prices[i-1] - fee)
+            dp[i][1] = max(dp[i-1][1] , dp[i-1][0] - prices[i-1])
+
+        return dp[n][0]
 ```
 
 ## Optimal Solutions
