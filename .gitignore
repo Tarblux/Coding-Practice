@@ -41,3 +41,7 @@ Cargo.lock
 *.bak
 
 .DS_Store
+Study Material/ducking-algorithm/.obsidian/app.json
+Study Material/ducking-algorithm/.obsidian/appearance.json
+Study Material/ducking-algorithm/.obsidian/core-plugins.json
+Study Material/ducking-algorithm/.obsidian/workspace.json
