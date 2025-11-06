@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "binary search",
+  "search": "median",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -17,6 +17,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1.4928496939409088,
+  "scale": 1.26506299643671,
   "close": false
 }
