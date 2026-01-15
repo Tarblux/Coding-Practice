@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 static void arithmeticOperators()
 {	
@@ -6,7 +7,7 @@ static void arithmeticOperators()
 
 	int value = 0;
 	// value = value + 1;
-	value += 8; 
+	value ++; 
 	value %= 3; 
 
 	printf("%d \n",value);
@@ -16,19 +17,24 @@ static void bitwiseOperators()
 {
 	printf("bitwise: \n");
 	int bits = 1;
-
+	bits <<= 2;
+	bits &= 2;
+	printf("%d \n",bits);
 }
 
 static void relationalOperators()
 {
 	printf("relational: \n");
 	int val = 3;
+	bool output = val == 4;
+	printf("%b \n",output);
 }
 
 static void logicalOperators()
 {
 	printf("logical: \n");
 	int logi = 4;
+	printf("%i \n",logi);
 }
 
 int main()
