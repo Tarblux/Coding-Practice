@@ -8,7 +8,7 @@ static void arithmeticOperators()
 	int value = 0;
 	// value = value + 1;
 	value ++; 
-	value %= 3; 
+	value %= 4; 
 
 	printf("%d \n",value);
 }
@@ -19,6 +19,8 @@ static void bitwiseOperators()
 	int bits = 1;
 	bits <<= 2;
 	bits &= 2;
+	bit ^= 1;
+	hdjsfgjshdrgfkije
 	printf("%d \n",bits);
 }
 
