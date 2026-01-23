@@ -1,23 +1,5 @@
 #include <stdio.h>
 
-/*
-
-A = 65 , a = 97  
-
-diff = 97 - 65 = 32 
-
-ex given B
-
-B = 66 + 32 = 98
-98 -> b 
-
-
-a =  (66 + 32) - 97  % 122 = 1
-
-
-*/ 
-
-
 int main(int argc, char *argv[])
 {
 	if (argc != 2){
@@ -30,31 +12,30 @@ int main(int argc, char *argv[])
 	for(i = 0; argv[1][i] != '\0' ; i++){
 		char letter = argv[1][i];
 
-		int asc_val = (int) letter;
-
-		if (asc_val < 97){
-			asc_val = ((int) letter + 32 );
-		}
-
-		switch (asc_val){
-			case 97:
-				printf("%d: 'A'\n",i);
+		switch (letter){
+			case 'a':
+			case 'A':
+				printf("%d: 'A'\n", (int) 'a' );
 				break;
 
-			case 101:
-				printf("%d: 'E'\n",i);
+			case 'e':
+			case 'E':
+				printf("%d: 'E'\n",(int) 'e');
 				break;
 
-			case 105:
-				printf("%d: 'I'\n",i);
+			case 'i':
+			case 'I':
+				printf("%d: 'I'\n",(int) 'i');
 				break;
 
-			case 111:
-				printf("%d: 'O'\n",i);
+			case 'o':
+			case 'O':
+				printf("%d: 'O'\n",(int) 'o');
 				break;
 
-			case 117:
-				printf("%d: 'U'\n",i);
+			case 'u':
+			case 'U':
+				printf("%d: 'A'\n",(int) 'u');
 				break;
 
 			case 'y':
