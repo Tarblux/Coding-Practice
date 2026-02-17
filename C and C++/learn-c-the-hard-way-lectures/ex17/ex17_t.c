@@ -7,15 +7,15 @@
 #define MAX_DATA 512
 #define MAX_ROWS 100
 
-struct Address {
+typedef struct Address {
 	int id;
 	int set;
 	char name[MAX_DATA];
 	char email[MAX_DATA];
-};
+} Address;
 
 struct Database{
-	struct Address rows[MAX_ROWS];
+	Address rows[MAX_ROWS];
 };
 
 struct Connection{
@@ -36,7 +36,7 @@ void die(const char *message)
 
 void Address_print(struct Address *addr)
 {
-	printf("%d %s %s", addr->id, addr->name, addr->email);
+	printf("%d %s %s \n", addr->id, addr->name, addr->email);
 }
 
 void Database_load(struct Connection *conn)
@@ -124,12 +124,22 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
 
 	addr->set = 1;
 
-	// WARNING; bug, read the "How to Break It" and fix this
-	char *res = strncpy(addr->name, name, MAX_DATA);	
+	// WARNING; bug, read the "How to Break It" and fix this (fixed)
+	char *res = strncpy(addr->name, name, MAX_DATA);
+	addr->name[MAX_DATA - 1] = '\0';
+
 	// demonstrate the strncpy bug
-	if(!res){
-		die("Name copy failed");
-	}
+	// if(!res){
+	// 	die("Name copy failed");
+	// }
+
+	/*
+	(die("Name copy failed");) checks if strncpy
+  returned NULL, but strncpy returns the destination
+  pointer, not NULL on failure. This check is useless and
+  can be removed, as strncpy does not indicate errors this
+  way.
+	*/
 
 	res = strncpy(addr->email, email, MAX_DATA);
 	if (!res){
@@ -218,6 +228,9 @@ int main(int argc, char *argv[])
 
 			Database_delete(conn, id);
 			Database_write(conn);
+			break;
+		case 'l':
+			Database_list(conn);
 			break;
 		default:
 			die("Invalid action: c=create, g=get, s=set, d=del, l=list");
