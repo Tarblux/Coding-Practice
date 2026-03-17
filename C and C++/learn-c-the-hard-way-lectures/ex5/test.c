@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+// static void arithmeticOperators()
+// {	
+// 	printf("arithmetic: \n");
+
+// 	int value = 0;
+// 	// value = value + 1;
+// 	value ++; 
+// 	value %= 3; 
+
+// 	printf("%d \n",value);
+// }
+
+// static void bitwiseOperators()
+// {
+// 	printf("bitwise: \n");
+// 	int bits = 1;
+// 	bits <<= 2;
+// 	bits &= 2;
+// 	printf("%d \n",bits);
+// }
+
+// static void relationalOperators()
+// {
+// 	printf("relational: \n");
+// 	int val = 3;
+// 	bool output = val == 4;
+// 	printf("%b \n",output);
+// }
+
+// static void logicalOperators()
+// {
+// 	printf("logical: \n");
+// 	int logi = 4;
+// 	printf("%i \n",logi);
+// }
+
+// 101101
+// enum Color { MONDAY , GREEN, BLUE } ;
+
+int main()
+{	
+	int x = 42;
+
+	int *p = &x;
+	int v = *p;
+
+	// printf("");
+
+	return 0;
+}
