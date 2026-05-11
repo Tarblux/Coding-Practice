@@ -1,0 +1,60 @@
+// Proto3 syntax - always required as the first non-comment line
+syntax = "proto3";
+
+package calculator;
+
+
+// Unary
+message AddRequest {
+  float a = 1;  // field number (NOT a value) - used for binary encoding
+  float b = 2;
+}
+message AddResponse {
+  float result = 1;
+}
+    
+// Client Streaming: stream individual numbers to sum
+message NumberRequest {
+  float number = 1;
+}
+message SumResponse {
+  float total = 1;
+}
+
+// Server Streaming: send one number, get back its multiply table
+message MultiplyRequest {
+  float number = 1;
+}
+message MultiplyResponse {
+  float result = 1;
+  int32 multiplier = 2;  // so client knows which row it is (e.g. 3 x 4 = 12)
+}
+
+// Bidirectional Streaming: stream operations, get results back as they complete
+message OperationRequest {
+  float a = 1;
+  float b = 2;
+  string op = 3;  // "add", "subtract", "multiply", "divide"
+}
+message OperationResponse {
+  float result = 1;
+  string description = 2;  // e.g. "3.0 add 4.0 = 7.0"
+}
+
+// Service Definition
+
+
+service Calculator {
+  // Pattern 1 - Unary: one request → one response (like a normal function call)
+  rpc Add (AddRequest) returns (AddResponse);
+
+  // Pattern 2 - Client Streaming: many requests → one response
+  rpc RunningSum (stream NumberRequest) returns (SumResponse);
+
+  // Pattern 3 - Server Streaming: one request → many responses
+  rpc MultiplyTable (MultiplyRequest) returns (stream MultiplyResponse);
+
+  // Pattern 4 - Bidirectional Streaming: many requests → many responses
+  rpc Calculate (stream OperationRequest) returns (stream OperationResponse);
+}
+

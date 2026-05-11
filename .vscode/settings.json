@@ -24,5 +24,6 @@
     "peacock.color": "0C0C0C",
     "files.watcherExclude": {
         "**/target": true
-    }
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }

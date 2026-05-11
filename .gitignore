@@ -1,5 +1,5 @@
 node_modules 
-
+*.venv
 
 # Compiled byte code
 *.o
@@ -45,3 +45,4 @@ Study Material/ducking-algorithm/.obsidian/app.json
 Study Material/ducking-algorithm/.obsidian/appearance.json
 Study Material/ducking-algorithm/.obsidian/core-plugins.json
 Study Material/ducking-algorithm/.obsidian/workspace.json
+# API/gRPC/.venv
